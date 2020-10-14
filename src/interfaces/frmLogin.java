@@ -5,11 +5,26 @@
  */
 package interfaces;
 
+import controller.FormCadastroController;
+import dao.Conexao;
+import dao.UsuarioDao;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+import model.Usuario;
+
 /**
  *
  * @author Cassio
  */
 public class frmLogin extends javax.swing.JDialog {
+
+    private final FormCadastroController controller;
 
     /**
      * Creates new form frmLogin
@@ -17,6 +32,7 @@ public class frmLogin extends javax.swing.JDialog {
     public frmLogin(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        controller = new FormCadastroController(this);
     }
 
     /**
@@ -103,6 +119,11 @@ public class frmLogin extends javax.swing.JDialog {
         kButton2.setkHoverForeGround(new java.awt.Color(255, 255, 255));
         kButton2.setkHoverStartColor(new java.awt.Color(153, 0, 153));
         kButton2.setkStartColor(new java.awt.Color(204, 0, 255));
+        kButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kButton2ActionPerformed(evt);
+            }
+        });
         jPanel1.add(kButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 410, 160, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 70, 400, 490));
@@ -152,10 +173,14 @@ public class frmLogin extends javax.swing.JDialog {
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 70, 580, 490));
 
         jPanel5.setBackground(new java.awt.Color(51, 37, 78));
-        getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1080, 650));
+        getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 10, 1100, 650));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void kButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton2ActionPerformed
+        controller.salvaUsuario();
+    }//GEN-LAST:event_kButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -199,6 +224,32 @@ public class frmLogin extends javax.swing.JDialog {
         });
     }
 
+    public JTextField getTxtPalavra() {
+        return txtPalavra;
+    }
+
+    public void setTxtPalavra(JTextField txtPalavra) {
+        this.txtPalavra = txtPalavra;
+    }
+
+    public JPasswordField getPsfSenha() {
+        return psfSenha;
+    }
+
+    public void setPsfSenha(JPasswordField psfSenha) {
+        this.psfSenha = psfSenha;
+    }
+
+    public JPasswordField getPsfSenha1() {
+        return psfSenha1;
+    }
+
+    public void setPsfSenha1(JPasswordField psfSenha1) {
+        this.psfSenha1 = psfSenha1;
+    }
+    
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
