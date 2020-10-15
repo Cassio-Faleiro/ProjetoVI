@@ -20,6 +20,13 @@ public class Usuario {
         this.senhaConfirmacao = senhaConfirmacao;
     }
 
+    public Usuario(String usuario, String senha) {
+        this.usuario = usuario;
+        this.senha = senha;
+    }
+    
+    
+
     public String getSenhaConfirmacao() {
         return senhaConfirmacao;
     }
