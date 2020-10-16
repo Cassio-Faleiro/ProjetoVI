@@ -203,6 +203,9 @@ public class frmLogin extends javax.swing.JDialog {
 
     private void kButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton2ActionPerformed
         controller.salvaUsuario();
+        txtPalavra.setText("");
+        psfSenha.setText("");
+        psfSenha1.setText("");
     }//GEN-LAST:event_kButton2ActionPerformed
 
     private void bnt_exitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bnt_exitMouseClicked
