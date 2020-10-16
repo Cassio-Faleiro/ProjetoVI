@@ -121,7 +121,7 @@ public class frmLogin extends javax.swing.JDialog {
         jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(261, 6, 150, 110));
 
         kGradientPanel1.add(jPanel2);
-        jPanel2.setBounds(530, 110, 480, 570);
+        jPanel2.setBounds(530, 110, 470, 570);
 
         bnt_exit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/close.png"))); // NOI18N
         bnt_exit.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -296,6 +296,6 @@ public class frmLogin extends javax.swing.JDialog {
     public javax.swing.JPasswordField psfSenha;
     public javax.swing.JPasswordField psfSenha1;
     public javax.swing.JPasswordField psfSenha3;
-    private javax.swing.JTextField txtPalavra;
+    public javax.swing.JTextField txtPalavra;
     // End of variables declaration//GEN-END:variables
 }
