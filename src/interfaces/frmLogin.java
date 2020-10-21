@@ -1,27 +1,10 @@
 
 package interfaces;
 
-import controller.FormCadastroController;
-import dao.Conexao;
-import dao.UsuarioDao;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.JOptionPane;
-import javax.swing.JPasswordField;
-import javax.swing.JTextField;
-import model.Usuario;
+public class frmLogin extends javax.swing.JFrame {
 
-public class frmLogin extends javax.swing.JDialog {
-
-    private final FormCadastroController controller;
-
-    public frmLogin(java.awt.Frame parent, boolean modal) {
-        super(parent, modal);
-        initComponents();
-        controller = new FormCadastroController(this);
+    public frmLogin() {
+        initComponents();       
     }
 
     @SuppressWarnings("unchecked")
@@ -53,6 +36,7 @@ public class frmLogin extends javax.swing.JDialog {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         kGradientPanel1.setForeground(new java.awt.Color(153, 153, 153));
+        kGradientPanel1.setkBorderRadius(0);
         kGradientPanel1.setkEndColor(new java.awt.Color(0, 204, 204));
         kGradientPanel1.setkGradientFocus(1500);
         kGradientPanel1.setkStartColor(new java.awt.Color(20, 85, 217));
@@ -91,6 +75,11 @@ public class frmLogin extends javax.swing.JDialog {
         kButton3.setkHoverEndColor(new java.awt.Color(7, 162, 208));
         kButton3.setkHoverForeGround(new java.awt.Color(255, 255, 255));
         kButton3.setkHoverStartColor(new java.awt.Color(0, 204, 204));
+        kButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kButton3ActionPerformed(evt);
+            }
+        });
         jPanel2.add(kButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(77, 326, 334, -1));
 
         psfSenha3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -114,7 +103,7 @@ public class frmLogin extends javax.swing.JDialog {
             }
         });
         kGradientPanel1.add(bnt_exit);
-        bnt_exit.setBounds(1050, 10, 36, 30);
+        bnt_exit.setBounds(1100, 10, 36, 30);
 
         jPanel1.setBackground(new java.awt.Color(16, 67, 198));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -179,23 +168,29 @@ public class frmLogin extends javax.swing.JDialog {
         kGradientPanel1.add(jPanel1);
         jPanel1.setBounds(130, 110, 400, 570);
 
-        getContentPane().add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1090, 720));
+        getContentPane().add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1150, 730));
 
-        pack();
+        setSize(new java.awt.Dimension(1147, 731));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void kButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton2ActionPerformed
-        controller.salvaUsuario();
-        txtPalavra.setText("");
-        psfSenha.setText("");
-        psfSenha1.setText("");
-    }//GEN-LAST:event_kButton2ActionPerformed
+    private void kButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton3ActionPerformed
+        frmPrincipal principal = new frmPrincipal();
+        principal.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_kButton3ActionPerformed
 
     private void bnt_exitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bnt_exitMouseClicked
         System.exit(0);
     }//GEN-LAST:event_bnt_exitMouseClicked
 
+    private void kButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton2ActionPerformed
+ 
+    }//GEN-LAST:event_kButton2ActionPerformed
+
+    /**
+     * @param args the command line arguments
+     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -204,7 +199,7 @@ public class frmLogin extends javax.swing.JDialog {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Windows".equals(info.getName())) {
+                if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -219,48 +214,16 @@ public class frmLogin extends javax.swing.JDialog {
             java.util.logging.Logger.getLogger(frmLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
-        /* Create and display the dialog */
+        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                frmLogin dialog = new frmLogin(new javax.swing.JFrame(), true);
-                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-                    @Override
-                    public void windowClosing(java.awt.event.WindowEvent e) {
-                        System.exit(0);
-                    }
-                });
-                dialog.setVisible(true);
+                new frmLogin().setVisible(true);
             }
         });
     }
 
-    public JTextField getTxtPalavra() {
-        return txtPalavra;
-    }
-
-    public void setTxtPalavra(JTextField txtPalavra) {
-        this.txtPalavra = txtPalavra;
-    }
-
-    public JPasswordField getPsfSenha() {
-        return psfSenha;
-    }
-
-    public void setPsfSenha(JPasswordField psfSenha) {
-        this.psfSenha = psfSenha;
-    }
-
-    public JPasswordField getPsfSenha1() {
-        return psfSenha1;
-    }
-
-    public void setPsfSenha1(JPasswordField psfSenha1) {
-        this.psfSenha1 = psfSenha1;
-    }
-    
-    
-    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel bnt_exit;
     private javax.swing.JLabel jLabel1;
