@@ -1,6 +1,13 @@
 
 package interfaces;
 
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+import keeptoo.KButton;
+import keeptoo.KGradientPanel;
+
 public class frmLogin extends javax.swing.JFrame {
 
     public frmLogin() {
@@ -179,6 +186,158 @@ public class frmLogin extends javax.swing.JFrame {
         principal.setVisible(true);
         dispose();
     }//GEN-LAST:event_kButton3ActionPerformed
+
+    public JLabel getBnt_exit() {
+        return bnt_exit;
+    }
+
+    public void setBnt_exit(JLabel bnt_exit) {
+        this.bnt_exit = bnt_exit;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public void setjLabel1(JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public JLabel getjLabel10() {
+        return jLabel10;
+    }
+
+    public void setjLabel10(JLabel jLabel10) {
+        this.jLabel10 = jLabel10;
+    }
+
+    public JLabel getjLabel13() {
+        return jLabel13;
+    }
+
+    public void setjLabel13(JLabel jLabel13) {
+        this.jLabel13 = jLabel13;
+    }
+
+    public JLabel getjLabel2() {
+        return jLabel2;
+    }
+
+    public void setjLabel2(JLabel jLabel2) {
+        this.jLabel2 = jLabel2;
+    }
+
+    public JLabel getjLabel3() {
+        return jLabel3;
+    }
+
+    public void setjLabel3(JLabel jLabel3) {
+        this.jLabel3 = jLabel3;
+    }
+
+    public JLabel getjLabel4() {
+        return jLabel4;
+    }
+
+    public void setjLabel4(JLabel jLabel4) {
+        this.jLabel4 = jLabel4;
+    }
+
+    public JLabel getjLabel7() {
+        return jLabel7;
+    }
+
+    public void setjLabel7(JLabel jLabel7) {
+        this.jLabel7 = jLabel7;
+    }
+
+    public JLabel getjLabel8() {
+        return jLabel8;
+    }
+
+    public void setjLabel8(JLabel jLabel8) {
+        this.jLabel8 = jLabel8;
+    }
+
+    public JPanel getjPanel1() {
+        return jPanel1;
+    }
+
+    public void setjPanel1(JPanel jPanel1) {
+        this.jPanel1 = jPanel1;
+    }
+
+    public JPanel getjPanel2() {
+        return jPanel2;
+    }
+
+    public void setjPanel2(JPanel jPanel2) {
+        this.jPanel2 = jPanel2;
+    }
+
+    public JTextField getjTextField1() {
+        return jTextField1;
+    }
+
+    public void setjTextField1(JTextField jTextField1) {
+        this.jTextField1 = jTextField1;
+    }
+
+    public KButton getkButton2() {
+        return kButton2;
+    }
+
+    public void setkButton2(KButton kButton2) {
+        this.kButton2 = kButton2;
+    }
+
+    public KButton getkButton3() {
+        return kButton3;
+    }
+
+    public void setkButton3(KButton kButton3) {
+        this.kButton3 = kButton3;
+    }
+
+    public KGradientPanel getkGradientPanel1() {
+        return kGradientPanel1;
+    }
+
+    public void setkGradientPanel1(KGradientPanel kGradientPanel1) {
+        this.kGradientPanel1 = kGradientPanel1;
+    }
+
+    public JPasswordField getPsfSenha() {
+        return psfSenha;
+    }
+
+    public void setPsfSenha(JPasswordField psfSenha) {
+        this.psfSenha = psfSenha;
+    }
+
+    public JPasswordField getPsfSenha1() {
+        return psfSenha1;
+    }
+
+    public void setPsfSenha1(JPasswordField psfSenha1) {
+        this.psfSenha1 = psfSenha1;
+    }
+
+    public JPasswordField getPsfSenha3() {
+        return psfSenha3;
+    }
+
+    public void setPsfSenha3(JPasswordField psfSenha3) {
+        this.psfSenha3 = psfSenha3;
+    }
+
+    public JTextField getTxtPalavra() {
+        return txtPalavra;
+    }
+
+    public void setTxtPalavra(JTextField txtPalavra) {
+        this.txtPalavra = txtPalavra;
+    }
 
     private void bnt_exitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bnt_exitMouseClicked
         System.exit(0);
