@@ -32,6 +32,9 @@ public class frmPrincipal extends javax.swing.JFrame {
         lblMax = new javax.swing.JLabel();
         bntMin = new javax.swing.JPanel();
         lblMin = new javax.swing.JLabel();
+        userLogin = new javax.swing.JPanel();
+        iconUser = new javax.swing.JLabel();
+        lblUser = new javax.swing.JLabel();
         menu = new keeptoo.KGradientPanel();
         menuIcones = new keeptoo.KGradientPanel();
         bntExpandir = new javax.swing.JPanel();
@@ -121,6 +124,37 @@ public class frmPrincipal extends javax.swing.JFrame {
         minMaxSair.add(bntMin, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 0, 50, 50));
 
         cabecalho.add(minMaxSair, java.awt.BorderLayout.LINE_END);
+
+        userLogin.setBackground(new java.awt.Color(9, 22, 50));
+
+        iconUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/userr_32px.png"))); // NOI18N
+
+        lblUser.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblUser.setForeground(new java.awt.Color(204, 204, 204));
+        lblUser.setText("Usuário");
+
+        javax.swing.GroupLayout userLoginLayout = new javax.swing.GroupLayout(userLogin);
+        userLogin.setLayout(userLoginLayout);
+        userLoginLayout.setHorizontalGroup(
+            userLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, userLoginLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(iconUser)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblUser, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(44, Short.MAX_VALUE))
+        );
+        userLoginLayout.setVerticalGroup(
+            userLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, userLoginLayout.createSequentialGroup()
+                .addContainerGap(12, Short.MAX_VALUE)
+                .addGroup(userLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(iconUser)
+                    .addComponent(lblUser, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
+
+        cabecalho.add(userLogin, java.awt.BorderLayout.LINE_START);
 
         getContentPane().add(cabecalho, java.awt.BorderLayout.NORTH);
 
@@ -348,13 +382,16 @@ public class frmPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel cabecalho;
     private javax.swing.JPanel centro;
     private javax.swing.JPanel detalhe;
+    private javax.swing.JLabel iconUser;
     private keeptoo.KGradientPanel kGradientPanel1;
     private javax.swing.JLabel lblExpandir;
     private javax.swing.JLabel lblMax;
     private javax.swing.JLabel lblMin;
     private javax.swing.JLabel lblSair;
+    private javax.swing.JLabel lblUser;
     private keeptoo.KGradientPanel menu;
     private keeptoo.KGradientPanel menuIcones;
     private javax.swing.JPanel minMaxSair;
+    private javax.swing.JPanel userLogin;
     // End of variables declaration//GEN-END:variables
 }
