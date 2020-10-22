@@ -1,6 +1,7 @@
 
 package interfaces;
 
+import controller.FormCadastroController;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
@@ -9,9 +10,11 @@ import keeptoo.KButton;
 import keeptoo.KGradientPanel;
 
 public class frmLogin extends javax.swing.JFrame {
+    private final FormCadastroController controller;
 
     public frmLogin() {
         initComponents();       
+        controller = new FormCadastroController(this);
     }
 
     @SuppressWarnings("unchecked")
@@ -344,7 +347,10 @@ public class frmLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_bnt_exitMouseClicked
 
     private void kButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton2ActionPerformed
- 
+        controller.salvaUsuario();
+        txtPalavra.setText("");
+        psfSenha.setText("");
+        psfSenha1.setText("");
     }//GEN-LAST:event_kButton2ActionPerformed
 
     /**
