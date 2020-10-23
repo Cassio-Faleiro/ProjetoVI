@@ -7,6 +7,7 @@ import java.awt.event.ActionEvent;
 import static java.lang.reflect.Array.set;
 import javax.swing.AbstractAction;
 import javax.swing.Action;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
@@ -40,10 +41,8 @@ public class frmPrincipal extends javax.swing.JFrame {
         bntExpandir = new javax.swing.JPanel();
         lblExpandir = new javax.swing.JLabel();
         detalhe = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         kGradientPanel1 = new keeptoo.KGradientPanel();
-        jLabel2 = new javax.swing.JLabel();
-        central = new javax.swing.JPanel();
+        centro = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -159,7 +158,7 @@ public class frmPrincipal extends javax.swing.JFrame {
         userLoginLayout.setVerticalGroup(
             userLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, userLoginLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(12, Short.MAX_VALUE)
                 .addGroup(userLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(iconUser)
                     .addComponent(lblUser, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -227,15 +226,6 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         menuIcones.add(bntExpandir, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 60, 50));
 
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/max_32px.png"))); // NOI18N
-        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel1MouseClicked(evt);
-            }
-        });
-        menuIcones.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 60, -1));
-
         menu.add(menuIcones, java.awt.BorderLayout.LINE_START);
 
         kGradientPanel1.setkBorderRadius(0);
@@ -244,53 +234,50 @@ public class frmPrincipal extends javax.swing.JFrame {
         kGradientPanel1.setkStartColor(new java.awt.Color(13, 31, 67));
         kGradientPanel1.setPreferredSize(new java.awt.Dimension(140, 620));
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel2.setText("Cadastro");
-
         javax.swing.GroupLayout kGradientPanel1Layout = new javax.swing.GroupLayout(kGradientPanel1);
         kGradientPanel1.setLayout(kGradientPanel1Layout);
         kGradientPanel1Layout.setHorizontalGroup(
             kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         kGradientPanel1Layout.setVerticalGroup(
             kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                .addGap(104, 104, 104)
-                .addComponent(jLabel2)
-                .addContainerGap(458, Short.MAX_VALUE))
+            .addGap(0, 588, Short.MAX_VALUE)
         );
 
         menu.add(kGradientPanel1, java.awt.BorderLayout.CENTER);
 
         getContentPane().add(menu, java.awt.BorderLayout.LINE_START);
 
-        javax.swing.GroupLayout centralLayout = new javax.swing.GroupLayout(central);
-        central.setLayout(centralLayout);
-        centralLayout.setHorizontalGroup(
-            centralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1036, Short.MAX_VALUE)
+        centro.setBackground(new java.awt.Color(255, 255, 255));
+        centro.setForeground(new java.awt.Color(204, 204, 204));
+
+        javax.swing.GroupLayout centroLayout = new javax.swing.GroupLayout(centro);
+        centro.setLayout(centroLayout);
+        centroLayout.setHorizontalGroup(
+            centroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1045, Short.MAX_VALUE)
         );
-        centralLayout.setVerticalGroup(
-            centralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        centroLayout.setVerticalGroup(
+            centroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 588, Short.MAX_VALUE)
         );
 
-        getContentPane().add(central, java.awt.BorderLayout.CENTER);
+        getContentPane().add(centro, java.awt.BorderLayout.CENTER);
 
-        setSize(new java.awt.Dimension(1096, 638));
+        setSize(new java.awt.Dimension(1105, 638));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     
-    
-    //alterar a cor do botão quando clicado
+    //alterar a cor do botão quando cursor passar por cima
     public void hover(JPanel hover, Color rand){
         hover.setBackground(rand);
+    }
+    
+    //alterar a cor da fonte quando cursor passar por cima
+    public void hoverForeground(JLabel hover, Color rand){
+        hover.setForeground(rand);
     }
     
     //expandir o menu
@@ -355,11 +342,11 @@ public class frmPrincipal extends javax.swing.JFrame {
 
     private void lblExpandirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblExpandirMouseClicked
         //alterar a cor do botão que expandi o menu
-        clickButton(bntExpandir, detalhe, 1);       
-        
-//      expandir o menu
+        clickButton(bntExpandir, detalhe, 1);
+                
+        //expandir o menu
         if(abertoFechado == true){
-//            alterar a cor do botão que expandi o menu
+            //alterar a cor do botão que expandi o menu
             clickButton(bntExpandir, detalhe, 0);
             expandir(menu, abertoFechado);
             SwingUtilities.updateComponentTreeUI(this);
@@ -369,7 +356,6 @@ public class frmPrincipal extends javax.swing.JFrame {
             SwingUtilities.updateComponentTreeUI(this);
             abertoFechado=true;           
         }
-        
     }//GEN-LAST:event_lblExpandirMouseClicked
 
     private void cabecalhoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cabecalhoMousePressed
@@ -384,12 +370,6 @@ public class frmPrincipal extends javax.swing.JFrame {
         int yy = evt.getYOnScreen();
         this.setLocation(xx-x, yy-y);
     }//GEN-LAST:event_cabecalhoMouseDragged
-
-    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-      
-       
-        
-    }//GEN-LAST:event_jLabel1MouseClicked
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -428,11 +408,9 @@ public class frmPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel bntMin;
     private javax.swing.JPanel bntSair;
     private javax.swing.JPanel cabecalho;
-    private javax.swing.JPanel central;
+    private javax.swing.JPanel centro;
     private javax.swing.JPanel detalhe;
     private javax.swing.JLabel iconUser;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private keeptoo.KGradientPanel kGradientPanel1;
     private javax.swing.JLabel lblExpandir;
     private javax.swing.JLabel lblMax;
