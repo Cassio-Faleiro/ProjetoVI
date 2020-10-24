@@ -25,6 +25,7 @@ public class frmPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        grupoSexoMeF = new javax.swing.ButtonGroup();
         cabecalho = new javax.swing.JPanel();
         minMaxSair = new javax.swing.JPanel();
         bntSair = new javax.swing.JPanel();
@@ -61,9 +62,32 @@ public class frmPrincipal extends javax.swing.JFrame {
         separadorEstoque = new javax.swing.JSeparator();
         bntEsto = new javax.swing.JPanel();
         lblEsto = new javax.swing.JLabel();
-        centro = new javax.swing.JPanel();
+        telas = new javax.swing.JPanel();
         eventFechaMenu = new javax.swing.JLabel();
         frmCliente = new javax.swing.JPanel();
+        pnlCadastroBasico1 = new javax.swing.JPanel();
+        lblNome1 = new javax.swing.JLabel();
+        txtNome1 = new javax.swing.JTextField();
+        lvlCPF1 = new javax.swing.JLabel();
+        txtCPF1 = new javax.swing.JFormattedTextField();
+        lblSexo1 = new javax.swing.JLabel();
+        rbFeminino1 = new javax.swing.JRadioButton();
+        rbMasculino1 = new javax.swing.JRadioButton();
+        txtSobrenome1 = new javax.swing.JTextField();
+        lblSobrenome1 = new javax.swing.JLabel();
+        pnlEndereco = new javax.swing.JPanel();
+        lblRua = new javax.swing.JLabel();
+        txtRua = new javax.swing.JTextField();
+        lvlNumero = new javax.swing.JLabel();
+        txtNumero = new javax.swing.JTextField();
+        lblBairro = new javax.swing.JLabel();
+        txtBairro = new javax.swing.JTextField();
+        lblLagradouro = new javax.swing.JLabel();
+        txtLagradouro = new javax.swing.JTextField();
+        lvlCEP = new javax.swing.JLabel();
+        txtCPF2 = new javax.swing.JFormattedTextField();
+        lblCidade = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
         frmFornecedor = new javax.swing.JPanel();
         frmProduto = new javax.swing.JPanel();
         frmOrcamento = new javax.swing.JPanel();
@@ -445,19 +469,17 @@ public class frmPrincipal extends javax.swing.JFrame {
             .addComponent(bntCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(bntFornecedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(bntProduto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(menuExpandidoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblCadastro)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(bntOrcamento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(separadorServico, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(separadorEstoque, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(bntEsto, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(menuExpandidoLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(menuExpandidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblCadastro)
                     .addComponent(lblServico, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addComponent(bntEsto, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         menuExpandidoLayout.setVerticalGroup(
             menuExpandidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -484,38 +506,200 @@ public class frmPrincipal extends javax.swing.JFrame {
                 .addComponent(separadorEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, 5, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(29, 29, 29)
                 .addComponent(bntEsto, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(49, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         menu.add(menuExpandido, java.awt.BorderLayout.CENTER);
 
         getContentPane().add(menu, java.awt.BorderLayout.LINE_START);
 
-        centro.setBackground(new java.awt.Color(255, 255, 255));
-        centro.setForeground(new java.awt.Color(204, 204, 204));
-        centro.setLayout(new java.awt.CardLayout());
+        telas.setBackground(new java.awt.Color(255, 255, 255));
+        telas.setForeground(new java.awt.Color(204, 204, 204));
+        telas.setLayout(new java.awt.CardLayout());
 
         eventFechaMenu.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 eventFechaMenuMouseClicked(evt);
             }
         });
-        centro.add(eventFechaMenu, "card2");
+        telas.add(eventFechaMenu, "card2");
 
-        frmCliente.setBackground(new java.awt.Color(0, 0, 255));
+        frmCliente.setBackground(new java.awt.Color(255, 255, 255));
+        frmCliente.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout frmClienteLayout = new javax.swing.GroupLayout(frmCliente);
-        frmCliente.setLayout(frmClienteLayout);
-        frmClienteLayout.setHorizontalGroup(
-            frmClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1045, Short.MAX_VALUE)
+        pnlCadastroBasico1.setBackground(new java.awt.Color(255, 255, 255));
+        pnlCadastroBasico1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cadastro", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Nirmala UI", 1, 14))); // NOI18N
+
+        lblNome1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblNome1.setForeground(new java.awt.Color(102, 102, 102));
+        lblNome1.setText("Nome");
+
+        txtNome1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        txtNome1.setForeground(new java.awt.Color(153, 153, 153));
+        txtNome1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(51, 204, 255)));
+
+        lvlCPF1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lvlCPF1.setForeground(new java.awt.Color(102, 102, 102));
+        lvlCPF1.setText("CPF");
+
+        txtCPF1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(51, 204, 255)));
+        txtCPF1.setForeground(new java.awt.Color(153, 153, 153));
+        try {
+            txtCPF1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        txtCPF1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+
+        lblSexo1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblSexo1.setForeground(new java.awt.Color(102, 102, 102));
+        lblSexo1.setText("Sexo");
+
+        rbFeminino1.setBackground(new java.awt.Color(255, 255, 255));
+        grupoSexoMeF.add(rbFeminino1);
+        rbFeminino1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        rbFeminino1.setForeground(new java.awt.Color(102, 102, 102));
+        rbFeminino1.setText("Feminino");
+
+        rbMasculino1.setBackground(new java.awt.Color(255, 255, 255));
+        grupoSexoMeF.add(rbMasculino1);
+        rbMasculino1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        rbMasculino1.setForeground(new java.awt.Color(102, 102, 102));
+        rbMasculino1.setText("Maculino");
+
+        txtSobrenome1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        txtSobrenome1.setForeground(new java.awt.Color(153, 153, 153));
+        txtSobrenome1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(51, 204, 255)));
+
+        lblSobrenome1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblSobrenome1.setForeground(new java.awt.Color(102, 102, 102));
+        lblSobrenome1.setText("Sobrenome");
+
+        javax.swing.GroupLayout pnlCadastroBasico1Layout = new javax.swing.GroupLayout(pnlCadastroBasico1);
+        pnlCadastroBasico1.setLayout(pnlCadastroBasico1Layout);
+        pnlCadastroBasico1Layout.setHorizontalGroup(
+            pnlCadastroBasico1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlCadastroBasico1Layout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addGroup(pnlCadastroBasico1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlCadastroBasico1Layout.createSequentialGroup()
+                        .addComponent(lblNome1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(180, 180, 180)
+                        .addComponent(lblSobrenome1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlCadastroBasico1Layout.createSequentialGroup()
+                        .addComponent(txtNome1, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(70, 70, 70)
+                        .addComponent(txtSobrenome1, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlCadastroBasico1Layout.createSequentialGroup()
+                        .addComponent(lvlCPF1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(230, 230, 230)
+                        .addComponent(lblSexo1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlCadastroBasico1Layout.createSequentialGroup()
+                        .addComponent(txtCPF1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(170, 170, 170)
+                        .addComponent(rbFeminino1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(rbMasculino1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
-        frmClienteLayout.setVerticalGroup(
-            frmClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 668, Short.MAX_VALUE)
+        pnlCadastroBasico1Layout.setVerticalGroup(
+            pnlCadastroBasico1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlCadastroBasico1Layout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addGroup(pnlCadastroBasico1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblNome1)
+                    .addComponent(lblSobrenome1))
+                .addGap(14, 14, 14)
+                .addGroup(pnlCadastroBasico1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtNome1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtSobrenome1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
+                .addGroup(pnlCadastroBasico1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lvlCPF1)
+                    .addComponent(lblSexo1))
+                .addGap(14, 14, 14)
+                .addGroup(pnlCadastroBasico1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtCPF1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rbFeminino1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rbMasculino1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
-        centro.add(frmCliente, "card3");
+        frmCliente.add(pnlCadastroBasico1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 570, 190));
+
+        pnlEndereco.setBackground(new java.awt.Color(255, 255, 255));
+        pnlEndereco.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Endereço", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Nirmala UI", 1, 14))); // NOI18N
+        pnlEndereco.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblRua.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblRua.setForeground(new java.awt.Color(102, 102, 102));
+        lblRua.setText("Rua");
+        pnlEndereco.add(lblRua, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 100, -1));
+
+        txtRua.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        txtRua.setForeground(new java.awt.Color(153, 153, 153));
+        txtRua.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(51, 204, 255)));
+        pnlEndereco.add(txtRua, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 210, 20));
+
+        lvlNumero.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lvlNumero.setForeground(new java.awt.Color(102, 102, 102));
+        lvlNumero.setText("Número");
+        pnlEndereco.add(lvlNumero, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 40, 50, -1));
+
+        txtNumero.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        txtNumero.setForeground(new java.awt.Color(153, 153, 153));
+        txtNumero.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(51, 204, 255)));
+        pnlEndereco.add(txtNumero, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 70, 110, 20));
+
+        lblBairro.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblBairro.setForeground(new java.awt.Color(102, 102, 102));
+        lblBairro.setText("Bairro");
+        pnlEndereco.add(lblBairro, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 100, -1));
+
+        txtBairro.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        txtBairro.setForeground(new java.awt.Color(153, 153, 153));
+        txtBairro.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(51, 204, 255)));
+        pnlEndereco.add(txtBairro, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 210, 20));
+
+        lblLagradouro.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblLagradouro.setForeground(new java.awt.Color(102, 102, 102));
+        lblLagradouro.setText("Lagradouro");
+        pnlEndereco.add(lblLagradouro, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 80, -1));
+
+        txtLagradouro.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        txtLagradouro.setForeground(new java.awt.Color(153, 153, 153));
+        txtLagradouro.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(51, 204, 255)));
+        pnlEndereco.add(txtLagradouro, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 210, 20));
+
+        lvlCEP.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lvlCEP.setForeground(new java.awt.Color(102, 102, 102));
+        lvlCEP.setText("CEP");
+        pnlEndereco.add(lvlCEP, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 120, 50, -1));
+
+        txtCPF2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(51, 204, 255)));
+        txtCPF2.setForeground(new java.awt.Color(153, 153, 153));
+        try {
+            txtCPF2.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####-###")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        txtCPF2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        pnlEndereco.add(txtCPF2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 150, 110, 20));
+
+        lblCidade.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblCidade.setForeground(new java.awt.Color(102, 102, 102));
+        lblCidade.setText("Cidade");
+        pnlEndereco.add(lblCidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 80, -1));
+
+        jComboBox1.setBackground(new java.awt.Color(255, 255, 255));
+        jComboBox1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jComboBox1.setForeground(new java.awt.Color(153, 153, 153));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecionar...", "Venâncio", "Lajeado", "Santa Cruz do Sul" }));
+        pnlEndereco.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 210, -1));
+
+        frmCliente.add(pnlEndereco, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 570, 390));
+
+        telas.add(frmCliente, "card3");
 
         frmFornecedor.setBackground(new java.awt.Color(255, 51, 51));
 
@@ -530,7 +714,7 @@ public class frmPrincipal extends javax.swing.JFrame {
             .addGap(0, 668, Short.MAX_VALUE)
         );
 
-        centro.add(frmFornecedor, "card3");
+        telas.add(frmFornecedor, "card3");
 
         frmProduto.setBackground(new java.awt.Color(255, 51, 255));
 
@@ -545,7 +729,7 @@ public class frmPrincipal extends javax.swing.JFrame {
             .addGap(0, 668, Short.MAX_VALUE)
         );
 
-        centro.add(frmProduto, "card3");
+        telas.add(frmProduto, "card3");
 
         frmOrcamento.setBackground(new java.awt.Color(51, 255, 51));
 
@@ -560,7 +744,7 @@ public class frmPrincipal extends javax.swing.JFrame {
             .addGap(0, 668, Short.MAX_VALUE)
         );
 
-        centro.add(frmOrcamento, "card3");
+        telas.add(frmOrcamento, "card3");
 
         frmEstoque.setBackground(new java.awt.Color(51, 255, 204));
 
@@ -575,9 +759,9 @@ public class frmPrincipal extends javax.swing.JFrame {
             .addGap(0, 668, Short.MAX_VALUE)
         );
 
-        centro.add(frmEstoque, "card3");
+        telas.add(frmEstoque, "card3");
 
-        getContentPane().add(centro, java.awt.BorderLayout.CENTER);
+        getContentPane().add(telas, java.awt.BorderLayout.CENTER);
 
         setSize(new java.awt.Dimension(1105, 718));
         setLocationRelativeTo(null);
@@ -687,13 +871,13 @@ public class frmPrincipal extends javax.swing.JFrame {
 
     private void bntClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bntClienteMouseClicked
         //remove frame
-        centro.removeAll();
-        centro.repaint();
-        centro.revalidate();
+        telas.removeAll();
+        telas.repaint();
+        telas.revalidate();
         //add frame
-        centro.add(frmCliente);
-        centro.repaint();
-        centro.revalidate();
+        telas.add(frmCliente);
+        telas.repaint();
+        telas.revalidate();
     }//GEN-LAST:event_bntClienteMouseClicked
 
     private void bntClienteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bntClienteMouseEntered
@@ -708,13 +892,13 @@ public class frmPrincipal extends javax.swing.JFrame {
 
     private void bntFornecedorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bntFornecedorMouseClicked
         //remove frame
-        centro.removeAll();
-        centro.repaint();
-        centro.revalidate();
+        telas.removeAll();
+        telas.repaint();
+        telas.revalidate();
         //add frame
-        centro.add(frmFornecedor);
-        centro.repaint();
-        centro.revalidate();
+        telas.add(frmFornecedor);
+        telas.repaint();
+        telas.revalidate();
     }//GEN-LAST:event_bntFornecedorMouseClicked
 
     private void bntFornecedorMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bntFornecedorMouseEntered
@@ -729,13 +913,13 @@ public class frmPrincipal extends javax.swing.JFrame {
 
     private void bntProdutoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bntProdutoMouseClicked
         //remove frame
-        centro.removeAll();
-        centro.repaint();
-        centro.revalidate();
+        telas.removeAll();
+        telas.repaint();
+        telas.revalidate();
         //add frame
-        centro.add(frmProduto);
-        centro.repaint();
-        centro.revalidate();
+        telas.add(frmProduto);
+        telas.repaint();
+        telas.revalidate();
     }//GEN-LAST:event_bntProdutoMouseClicked
 
     private void bntProdutoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bntProdutoMouseEntered
@@ -750,13 +934,13 @@ public class frmPrincipal extends javax.swing.JFrame {
 
     private void bntOrcamentoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bntOrcamentoMouseClicked
         //remove frame
-        centro.removeAll();
-        centro.repaint();
-        centro.revalidate();
+        telas.removeAll();
+        telas.repaint();
+        telas.revalidate();
         //add frame
-        centro.add(frmOrcamento);
-        centro.repaint();
-        centro.revalidate();
+        telas.add(frmOrcamento);
+        telas.repaint();
+        telas.revalidate();
     }//GEN-LAST:event_bntOrcamentoMouseClicked
 
     private void bntOrcamentoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bntOrcamentoMouseEntered
@@ -771,13 +955,13 @@ public class frmPrincipal extends javax.swing.JFrame {
 
     private void bntEstoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bntEstoMouseClicked
         //remove frame
-        centro.removeAll();
-        centro.repaint();
-        centro.revalidate();
+        telas.removeAll();
+        telas.repaint();
+        telas.revalidate();
         //add frame
-        centro.add(frmEstoque);
-        centro.repaint();
-        centro.revalidate();
+        telas.add(frmEstoque);
+        telas.repaint();
+        telas.revalidate();
     }//GEN-LAST:event_bntEstoMouseClicked
 
     private void bntEstoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bntEstoMouseEntered
@@ -861,7 +1045,6 @@ public class frmPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel bntProduto;
     private javax.swing.JPanel bntSair;
     private javax.swing.JPanel cabecalho;
-    private javax.swing.JPanel centro;
     private javax.swing.JPanel detalhe1;
     private javax.swing.JPanel detalhe2;
     private javax.swing.JLabel eventFechaMenu;
@@ -870,28 +1053,53 @@ public class frmPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel frmFornecedor;
     private javax.swing.JPanel frmOrcamento;
     private javax.swing.JPanel frmProduto;
+    private javax.swing.ButtonGroup grupoSexoMeF;
     private javax.swing.JLabel iconUser;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JLabel lblBairro;
     private javax.swing.JLabel lblCadastro;
+    private javax.swing.JLabel lblCidade;
     private javax.swing.JLabel lblCliente;
     private javax.swing.JLabel lblEsto;
     private javax.swing.JLabel lblEstoque;
     private javax.swing.JLabel lblExpandir;
     private javax.swing.JLabel lblFornecedor;
     private javax.swing.JLabel lblHome;
+    private javax.swing.JLabel lblLagradouro;
     private javax.swing.JLabel lblMax;
     private javax.swing.JLabel lblMin;
+    private javax.swing.JLabel lblNome1;
     private javax.swing.JLabel lblOrcamento;
     private javax.swing.JLabel lblProduto;
+    private javax.swing.JLabel lblRua;
     private javax.swing.JLabel lblSair;
     private javax.swing.JLabel lblServico;
+    private javax.swing.JLabel lblSexo1;
+    private javax.swing.JLabel lblSobrenome1;
     private javax.swing.JLabel lblUser;
+    private javax.swing.JLabel lvlCEP;
+    private javax.swing.JLabel lvlCPF1;
+    private javax.swing.JLabel lvlNumero;
     private keeptoo.KGradientPanel menu;
     private keeptoo.KGradientPanel menuExpandido;
     private keeptoo.KGradientPanel menuIcones;
     private javax.swing.JPanel minMaxSair;
+    private javax.swing.JPanel pnlCadastroBasico1;
+    private javax.swing.JPanel pnlEndereco;
+    private javax.swing.JRadioButton rbFeminino1;
+    private javax.swing.JRadioButton rbMasculino1;
     private javax.swing.JSeparator separadorCadastro;
     private javax.swing.JSeparator separadorEstoque;
     private javax.swing.JSeparator separadorServico;
+    private javax.swing.JPanel telas;
+    private javax.swing.JTextField txtBairro;
+    private javax.swing.JFormattedTextField txtCPF1;
+    private javax.swing.JFormattedTextField txtCPF2;
+    private javax.swing.JTextField txtLagradouro;
+    private javax.swing.JTextField txtNome1;
+    private javax.swing.JTextField txtNumero;
+    private javax.swing.JTextField txtRua;
+    private javax.swing.JTextField txtSobrenome1;
     private javax.swing.JPanel userLogin;
     // End of variables declaration//GEN-END:variables
 }
