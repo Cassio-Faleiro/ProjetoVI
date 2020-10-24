@@ -41,7 +41,23 @@ public class frmPrincipal extends javax.swing.JFrame {
         bntExpandir = new javax.swing.JPanel();
         lblExpandir = new javax.swing.JLabel();
         detalhe = new javax.swing.JPanel();
-        kGradientPanel1 = new keeptoo.KGradientPanel();
+        menuExpandido = new keeptoo.KGradientPanel();
+        lblCadastro = new javax.swing.JLabel();
+        separadorCadastro = new javax.swing.JSeparator();
+        bntCliente = new javax.swing.JPanel();
+        lblCliente = new javax.swing.JLabel();
+        bntFornecedor = new javax.swing.JPanel();
+        lblFornecedor = new javax.swing.JLabel();
+        bntProduto = new javax.swing.JPanel();
+        lblProduto = new javax.swing.JLabel();
+        bntOrcamento = new javax.swing.JPanel();
+        lblOrcamento = new javax.swing.JLabel();
+        lblServico = new javax.swing.JLabel();
+        separadorServico = new javax.swing.JSeparator();
+        lblEstoque = new javax.swing.JLabel();
+        separadorEstoque = new javax.swing.JSeparator();
+        bntEsto = new javax.swing.JPanel();
+        lblEsto = new javax.swing.JLabel();
         centro = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -228,24 +244,184 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         menu.add(menuIcones, java.awt.BorderLayout.LINE_START);
 
-        kGradientPanel1.setkBorderRadius(0);
-        kGradientPanel1.setkEndColor(new java.awt.Color(22, 54, 95));
-        kGradientPanel1.setkGradientFocus(10);
-        kGradientPanel1.setkStartColor(new java.awt.Color(13, 31, 67));
-        kGradientPanel1.setPreferredSize(new java.awt.Dimension(140, 620));
+        menuExpandido.setkBorderRadius(0);
+        menuExpandido.setkEndColor(new java.awt.Color(22, 54, 95));
+        menuExpandido.setkGradientFocus(10);
+        menuExpandido.setkStartColor(new java.awt.Color(13, 31, 67));
+        menuExpandido.setPreferredSize(new java.awt.Dimension(140, 620));
 
-        javax.swing.GroupLayout kGradientPanel1Layout = new javax.swing.GroupLayout(kGradientPanel1);
-        kGradientPanel1.setLayout(kGradientPanel1Layout);
-        kGradientPanel1Layout.setHorizontalGroup(
-            kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+        lblCadastro.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        lblCadastro.setForeground(new java.awt.Color(204, 204, 204));
+        lblCadastro.setText("CADASTROS");
+
+        separadorCadastro.setBackground(new java.awt.Color(84, 97, 127));
+        separadorCadastro.setPreferredSize(new java.awt.Dimension(50, 50));
+
+        bntCliente.setBackground(new java.awt.Color(13, 31, 67));
+        bntCliente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bntClienteMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                bntClienteMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                bntClienteMouseExited(evt);
+            }
+        });
+        bntCliente.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblCliente.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblCliente.setForeground(new java.awt.Color(204, 204, 204));
+        lblCliente.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblCliente.setText("Cliente");
+        bntCliente.add(lblCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 60, -1));
+
+        bntFornecedor.setBackground(new java.awt.Color(13, 31, 67));
+        bntFornecedor.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bntFornecedorMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                bntFornecedorMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                bntFornecedorMouseExited(evt);
+            }
+        });
+        bntFornecedor.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblFornecedor.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblFornecedor.setForeground(new java.awt.Color(204, 204, 204));
+        lblFornecedor.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblFornecedor.setText("Fornecedor");
+        bntFornecedor.add(lblFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 100, -1));
+
+        bntProduto.setBackground(new java.awt.Color(13, 31, 67));
+        bntProduto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bntProdutoMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                bntProdutoMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                bntProdutoMouseExited(evt);
+            }
+        });
+        bntProduto.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblProduto.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblProduto.setForeground(new java.awt.Color(204, 204, 204));
+        lblProduto.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblProduto.setText("Produto");
+        bntProduto.add(lblProduto, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 100, -1));
+
+        bntOrcamento.setBackground(new java.awt.Color(22, 54, 95));
+        bntOrcamento.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bntOrcamentoMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                bntOrcamentoMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                bntOrcamentoMouseExited(evt);
+            }
+        });
+        bntOrcamento.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblOrcamento.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblOrcamento.setForeground(new java.awt.Color(204, 204, 204));
+        lblOrcamento.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblOrcamento.setText("Orçamento");
+        bntOrcamento.add(lblOrcamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 80, -1));
+
+        lblServico.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        lblServico.setForeground(new java.awt.Color(204, 204, 204));
+        lblServico.setText("SERVIÇOS");
+
+        separadorServico.setBackground(new java.awt.Color(84, 97, 127));
+        separadorServico.setPreferredSize(new java.awt.Dimension(50, 50));
+
+        lblEstoque.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        lblEstoque.setForeground(new java.awt.Color(204, 204, 204));
+        lblEstoque.setText("ESTOQUE");
+
+        separadorEstoque.setBackground(new java.awt.Color(84, 97, 127));
+        separadorEstoque.setPreferredSize(new java.awt.Dimension(50, 50));
+
+        bntEsto.setBackground(new java.awt.Color(22, 54, 95));
+        bntEsto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bntEstoMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                bntEstoMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                bntEstoMouseExited(evt);
+            }
+        });
+        bntEsto.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblEsto.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblEsto.setForeground(new java.awt.Color(204, 204, 204));
+        lblEsto.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblEsto.setText("Listar Produtos");
+        bntEsto.add(lblEsto, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 120, 20));
+
+        javax.swing.GroupLayout menuExpandidoLayout = new javax.swing.GroupLayout(menuExpandido);
+        menuExpandido.setLayout(menuExpandidoLayout);
+        menuExpandidoLayout.setHorizontalGroup(
+            menuExpandidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(separadorCadastro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(bntCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(bntFornecedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(bntProduto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(menuExpandidoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblCadastro)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(bntOrcamento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(separadorServico, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(separadorEstoque, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(menuExpandidoLayout.createSequentialGroup()
+                .addGroup(menuExpandidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblServico, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(bntEsto, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        kGradientPanel1Layout.setVerticalGroup(
-            kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 588, Short.MAX_VALUE)
+        menuExpandidoLayout.setVerticalGroup(
+            menuExpandidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(menuExpandidoLayout.createSequentialGroup()
+                .addGap(56, 56, 56)
+                .addComponent(lblCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(separadorCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 5, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
+                .addComponent(bntCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(bntFornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(bntProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(57, 57, 57)
+                .addComponent(lblServico, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(separadorServico, javax.swing.GroupLayout.PREFERRED_SIZE, 5, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addComponent(bntOrcamento, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(54, 54, 54)
+                .addComponent(lblEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(separadorEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, 5, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
+                .addComponent(bntEsto, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(49, Short.MAX_VALUE))
         );
 
-        menu.add(kGradientPanel1, java.awt.BorderLayout.CENTER);
+        menu.add(menuExpandido, java.awt.BorderLayout.CENTER);
 
         getContentPane().add(menu, java.awt.BorderLayout.LINE_START);
 
@@ -260,12 +436,12 @@ public class frmPrincipal extends javax.swing.JFrame {
         );
         centroLayout.setVerticalGroup(
             centroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 588, Short.MAX_VALUE)
+            .addGap(0, 668, Short.MAX_VALUE)
         );
 
         getContentPane().add(centro, java.awt.BorderLayout.CENTER);
 
-        setSize(new java.awt.Dimension(1105, 638));
+        setSize(new java.awt.Dimension(1105, 718));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -371,6 +547,76 @@ public class frmPrincipal extends javax.swing.JFrame {
         this.setLocation(xx-x, yy-y);
     }//GEN-LAST:event_cabecalhoMouseDragged
 
+    private void bntClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bntClienteMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bntClienteMouseClicked
+
+    private void bntClienteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bntClienteMouseEntered
+        hover(bntCliente, new Color(18, 44, 83));
+        hoverForeground(lblCliente, new Color(255,255,255));
+    }//GEN-LAST:event_bntClienteMouseEntered
+
+    private void bntClienteMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bntClienteMouseExited
+        hover(bntCliente, new Color(13,31,67));
+        hoverForeground(lblCliente, new Color(204,204,204));
+    }//GEN-LAST:event_bntClienteMouseExited
+
+    private void bntFornecedorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bntFornecedorMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bntFornecedorMouseClicked
+
+    private void bntFornecedorMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bntFornecedorMouseEntered
+        hover(bntFornecedor, new Color(18, 44, 83));
+        hoverForeground(lblFornecedor, new Color(255,255,255));
+    }//GEN-LAST:event_bntFornecedorMouseEntered
+
+    private void bntFornecedorMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bntFornecedorMouseExited
+        hover(bntFornecedor, new Color(13,31,67));
+        hoverForeground(lblFornecedor, new Color(204,204,204));
+    }//GEN-LAST:event_bntFornecedorMouseExited
+
+    private void bntProdutoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bntProdutoMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bntProdutoMouseClicked
+
+    private void bntProdutoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bntProdutoMouseEntered
+        hover(bntProduto, new Color(18, 44, 83));
+        hoverForeground(lblProduto, new Color(255,255,255));
+    }//GEN-LAST:event_bntProdutoMouseEntered
+
+    private void bntProdutoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bntProdutoMouseExited
+        hover(bntProduto, new Color(13,31,67));
+        hoverForeground(lblProduto, new Color(204,204,204));
+    }//GEN-LAST:event_bntProdutoMouseExited
+
+    private void bntOrcamentoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bntOrcamentoMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bntOrcamentoMouseClicked
+
+    private void bntOrcamentoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bntOrcamentoMouseEntered
+        hover(bntOrcamento, new Color(18, 44, 83));
+        hoverForeground(lblOrcamento, new Color(255,255,255));
+    }//GEN-LAST:event_bntOrcamentoMouseEntered
+
+    private void bntOrcamentoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bntOrcamentoMouseExited
+        hover(bntOrcamento, new Color(22,54,95));
+        hoverForeground(lblOrcamento, new Color(204,204,204));
+    }//GEN-LAST:event_bntOrcamentoMouseExited
+
+    private void bntEstoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bntEstoMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bntEstoMouseClicked
+
+    private void bntEstoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bntEstoMouseEntered
+        hover(bntEsto, new Color(18, 44, 83));
+        hoverForeground(lblEsto, new Color(255,255,255));
+    }//GEN-LAST:event_bntEstoMouseEntered
+
+    private void bntEstoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bntEstoMouseExited
+        hover(bntEsto, new Color(22,54,95));
+        hoverForeground(lblEsto, new Color(204,204,204));
+    }//GEN-LAST:event_bntEstoMouseExited
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -403,23 +649,39 @@ public class frmPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel bntCliente;
+    private javax.swing.JPanel bntEsto;
     private javax.swing.JPanel bntExpandir;
+    private javax.swing.JPanel bntFornecedor;
     private javax.swing.JPanel bntMax;
     private javax.swing.JPanel bntMin;
+    private javax.swing.JPanel bntOrcamento;
+    private javax.swing.JPanel bntProduto;
     private javax.swing.JPanel bntSair;
     private javax.swing.JPanel cabecalho;
     private javax.swing.JPanel centro;
     private javax.swing.JPanel detalhe;
     private javax.swing.JLabel iconUser;
-    private keeptoo.KGradientPanel kGradientPanel1;
+    private javax.swing.JLabel lblCadastro;
+    private javax.swing.JLabel lblCliente;
+    private javax.swing.JLabel lblEsto;
+    private javax.swing.JLabel lblEstoque;
     private javax.swing.JLabel lblExpandir;
+    private javax.swing.JLabel lblFornecedor;
     private javax.swing.JLabel lblMax;
     private javax.swing.JLabel lblMin;
+    private javax.swing.JLabel lblOrcamento;
+    private javax.swing.JLabel lblProduto;
     private javax.swing.JLabel lblSair;
+    private javax.swing.JLabel lblServico;
     private javax.swing.JLabel lblUser;
     private keeptoo.KGradientPanel menu;
+    private keeptoo.KGradientPanel menuExpandido;
     private keeptoo.KGradientPanel menuIcones;
     private javax.swing.JPanel minMaxSair;
+    private javax.swing.JSeparator separadorCadastro;
+    private javax.swing.JSeparator separadorEstoque;
+    private javax.swing.JSeparator separadorServico;
     private javax.swing.JPanel userLogin;
     // End of variables declaration//GEN-END:variables
 }
