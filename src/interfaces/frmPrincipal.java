@@ -18,7 +18,7 @@ public class frmPrincipal extends javax.swing.JFrame {
     
     public frmPrincipal() {
         initComponents();
-        clickButton(bntExpandir, detalhe, 0);
+        clickButton(bntExpandir, detalhe1, 0);
     }
 
     @SuppressWarnings("unchecked")
@@ -38,9 +38,12 @@ public class frmPrincipal extends javax.swing.JFrame {
         lblUser = new javax.swing.JLabel();
         menu = new keeptoo.KGradientPanel();
         menuIcones = new keeptoo.KGradientPanel();
+        detalhe1 = new javax.swing.JPanel();
         bntExpandir = new javax.swing.JPanel();
         lblExpandir = new javax.swing.JLabel();
-        detalhe = new javax.swing.JPanel();
+        detalhe2 = new javax.swing.JPanel();
+        bntHome = new javax.swing.JPanel();
+        lblHome = new javax.swing.JLabel();
         menuExpandido = new keeptoo.KGradientPanel();
         lblCadastro = new javax.swing.JLabel();
         separadorCadastro = new javax.swing.JSeparator();
@@ -60,6 +63,11 @@ public class frmPrincipal extends javax.swing.JFrame {
         lblEsto = new javax.swing.JLabel();
         centro = new javax.swing.JPanel();
         eventFechaMenu = new javax.swing.JLabel();
+        frmCliente = new javax.swing.JPanel();
+        frmFornecedor = new javax.swing.JPanel();
+        frmProduto = new javax.swing.JPanel();
+        frmOrcamento = new javax.swing.JPanel();
+        frmEstoque = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -200,6 +208,30 @@ public class frmPrincipal extends javax.swing.JFrame {
         menuIcones.setPreferredSize(new java.awt.Dimension(61, 562));
         menuIcones.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        detalhe1.setBackground(new java.awt.Color(9, 22, 50));
+        detalhe1.setPreferredSize(new java.awt.Dimension(3, 50));
+        detalhe1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                detalhe1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                detalhe1MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout detalhe1Layout = new javax.swing.GroupLayout(detalhe1);
+        detalhe1.setLayout(detalhe1Layout);
+        detalhe1Layout.setHorizontalGroup(
+            detalhe1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 60, Short.MAX_VALUE)
+        );
+        detalhe1Layout.setVerticalGroup(
+            detalhe1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        menuIcones.add(detalhe1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 60, 5));
+
         bntExpandir.setBackground(new java.awt.Color(9, 22, 50));
         bntExpandir.setPreferredSize(new java.awt.Dimension(32, 32));
 
@@ -211,37 +243,70 @@ public class frmPrincipal extends javax.swing.JFrame {
             }
         });
 
-        detalhe.setBackground(new java.awt.Color(255, 255, 255));
-        detalhe.setPreferredSize(new java.awt.Dimension(3, 50));
-
-        javax.swing.GroupLayout detalheLayout = new javax.swing.GroupLayout(detalhe);
-        detalhe.setLayout(detalheLayout);
-        detalheLayout.setHorizontalGroup(
-            detalheLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 3, Short.MAX_VALUE)
-        );
-        detalheLayout.setVerticalGroup(
-            detalheLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 50, Short.MAX_VALUE)
-        );
-
         javax.swing.GroupLayout bntExpandirLayout = new javax.swing.GroupLayout(bntExpandir);
         bntExpandir.setLayout(bntExpandirLayout);
         bntExpandirLayout.setHorizontalGroup(
             bntExpandirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(bntExpandirLayout.createSequentialGroup()
-                .addComponent(detalhe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblExpandir, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bntExpandirLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(lblExpandir, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         bntExpandirLayout.setVerticalGroup(
             bntExpandirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(detalhe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(lblExpandir, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bntExpandirLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(lblExpandir, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        menuIcones.add(bntExpandir, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 60, 50));
+        menuIcones.add(bntExpandir, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 60, 50));
+
+        detalhe2.setBackground(new java.awt.Color(9, 22, 50));
+        detalhe2.setPreferredSize(new java.awt.Dimension(3, 50));
+
+        javax.swing.GroupLayout detalhe2Layout = new javax.swing.GroupLayout(detalhe2);
+        detalhe2.setLayout(detalhe2Layout);
+        detalhe2Layout.setHorizontalGroup(
+            detalhe2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 60, Short.MAX_VALUE)
+        );
+        detalhe2Layout.setVerticalGroup(
+            detalhe2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 5, Short.MAX_VALUE)
+        );
+
+        menuIcones.add(detalhe2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 60, 5));
+
+        bntHome.setBackground(new java.awt.Color(9, 22, 50));
+        bntHome.setPreferredSize(new java.awt.Dimension(32, 32));
+        bntHome.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bntHomeMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                bntHomeMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                bntHomeMouseExited(evt);
+            }
+        });
+
+        lblHome.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/home_32px.png"))); // NOI18N
+
+        javax.swing.GroupLayout bntHomeLayout = new javax.swing.GroupLayout(bntHome);
+        bntHome.setLayout(bntHomeLayout);
+        bntHomeLayout.setHorizontalGroup(
+            bntHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bntHomeLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(lblHome, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        bntHomeLayout.setVerticalGroup(
+            bntHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lblHome, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        );
+
+        menuIcones.add(bntHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 60, 50));
 
         menu.add(menuIcones, java.awt.BorderLayout.LINE_START);
 
@@ -428,23 +493,89 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         centro.setBackground(new java.awt.Color(255, 255, 255));
         centro.setForeground(new java.awt.Color(204, 204, 204));
+        centro.setLayout(new java.awt.CardLayout());
 
         eventFechaMenu.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 eventFechaMenuMouseClicked(evt);
             }
         });
+        centro.add(eventFechaMenu, "card2");
 
-        javax.swing.GroupLayout centroLayout = new javax.swing.GroupLayout(centro);
-        centro.setLayout(centroLayout);
-        centroLayout.setHorizontalGroup(
-            centroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(eventFechaMenu, javax.swing.GroupLayout.DEFAULT_SIZE, 1045, Short.MAX_VALUE)
+        frmCliente.setBackground(new java.awt.Color(0, 0, 255));
+
+        javax.swing.GroupLayout frmClienteLayout = new javax.swing.GroupLayout(frmCliente);
+        frmCliente.setLayout(frmClienteLayout);
+        frmClienteLayout.setHorizontalGroup(
+            frmClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1045, Short.MAX_VALUE)
         );
-        centroLayout.setVerticalGroup(
-            centroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(eventFechaMenu, javax.swing.GroupLayout.DEFAULT_SIZE, 668, Short.MAX_VALUE)
+        frmClienteLayout.setVerticalGroup(
+            frmClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 668, Short.MAX_VALUE)
         );
+
+        centro.add(frmCliente, "card3");
+
+        frmFornecedor.setBackground(new java.awt.Color(255, 51, 51));
+
+        javax.swing.GroupLayout frmFornecedorLayout = new javax.swing.GroupLayout(frmFornecedor);
+        frmFornecedor.setLayout(frmFornecedorLayout);
+        frmFornecedorLayout.setHorizontalGroup(
+            frmFornecedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1045, Short.MAX_VALUE)
+        );
+        frmFornecedorLayout.setVerticalGroup(
+            frmFornecedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 668, Short.MAX_VALUE)
+        );
+
+        centro.add(frmFornecedor, "card3");
+
+        frmProduto.setBackground(new java.awt.Color(255, 51, 255));
+
+        javax.swing.GroupLayout frmProdutoLayout = new javax.swing.GroupLayout(frmProduto);
+        frmProduto.setLayout(frmProdutoLayout);
+        frmProdutoLayout.setHorizontalGroup(
+            frmProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1045, Short.MAX_VALUE)
+        );
+        frmProdutoLayout.setVerticalGroup(
+            frmProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 668, Short.MAX_VALUE)
+        );
+
+        centro.add(frmProduto, "card3");
+
+        frmOrcamento.setBackground(new java.awt.Color(51, 255, 51));
+
+        javax.swing.GroupLayout frmOrcamentoLayout = new javax.swing.GroupLayout(frmOrcamento);
+        frmOrcamento.setLayout(frmOrcamentoLayout);
+        frmOrcamentoLayout.setHorizontalGroup(
+            frmOrcamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1045, Short.MAX_VALUE)
+        );
+        frmOrcamentoLayout.setVerticalGroup(
+            frmOrcamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 668, Short.MAX_VALUE)
+        );
+
+        centro.add(frmOrcamento, "card3");
+
+        frmEstoque.setBackground(new java.awt.Color(51, 255, 204));
+
+        javax.swing.GroupLayout frmEstoqueLayout = new javax.swing.GroupLayout(frmEstoque);
+        frmEstoque.setLayout(frmEstoqueLayout);
+        frmEstoqueLayout.setHorizontalGroup(
+            frmEstoqueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1045, Short.MAX_VALUE)
+        );
+        frmEstoqueLayout.setVerticalGroup(
+            frmEstoqueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 668, Short.MAX_VALUE)
+        );
+
+        centro.add(frmEstoque, "card3");
 
         getContentPane().add(centro, java.awt.BorderLayout.CENTER);
 
@@ -476,7 +607,7 @@ public class frmPrincipal extends javax.swing.JFrame {
     public void clickButton(JPanel jp1, JPanel jp2, int numero){
         if(numero == 1){
             jp1.setBackground(new Color(13,31,67));
-            jp2.setBackground(new Color(255,255,255));
+            jp2.setBackground(new Color(67,206,162));
         }else{
             jp1.setBackground(new Color(9,22,50));
             jp2.setBackground(new Color(9,22,50));
@@ -525,12 +656,12 @@ public class frmPrincipal extends javax.swing.JFrame {
 
     private void lblExpandirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblExpandirMouseClicked
         //alterar a cor do botão que expandi o menu
-        clickButton(bntExpandir, detalhe, 1);
+        clickButton(bntExpandir, detalhe1, 1);
                 
         //expandir o menu
         if(abertoFechado == true){
             //alterar a cor do botão que expandi o menu
-            clickButton(bntExpandir, detalhe, 0);
+            clickButton(bntExpandir, detalhe1, 0);
             expandir(menu, abertoFechado);
             SwingUtilities.updateComponentTreeUI(this);
             abertoFechado=false;
@@ -555,7 +686,14 @@ public class frmPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_cabecalhoMouseDragged
 
     private void bntClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bntClienteMouseClicked
-        // TODO add your handling code here:
+        //remove frame
+        centro.removeAll();
+        centro.repaint();
+        centro.revalidate();
+        //add frame
+        centro.add(frmCliente);
+        centro.repaint();
+        centro.revalidate();
     }//GEN-LAST:event_bntClienteMouseClicked
 
     private void bntClienteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bntClienteMouseEntered
@@ -569,7 +707,14 @@ public class frmPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_bntClienteMouseExited
 
     private void bntFornecedorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bntFornecedorMouseClicked
-        // TODO add your handling code here:
+        //remove frame
+        centro.removeAll();
+        centro.repaint();
+        centro.revalidate();
+        //add frame
+        centro.add(frmFornecedor);
+        centro.repaint();
+        centro.revalidate();
     }//GEN-LAST:event_bntFornecedorMouseClicked
 
     private void bntFornecedorMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bntFornecedorMouseEntered
@@ -583,7 +728,14 @@ public class frmPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_bntFornecedorMouseExited
 
     private void bntProdutoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bntProdutoMouseClicked
-        // TODO add your handling code here:
+        //remove frame
+        centro.removeAll();
+        centro.repaint();
+        centro.revalidate();
+        //add frame
+        centro.add(frmProduto);
+        centro.repaint();
+        centro.revalidate();
     }//GEN-LAST:event_bntProdutoMouseClicked
 
     private void bntProdutoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bntProdutoMouseEntered
@@ -597,7 +749,14 @@ public class frmPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_bntProdutoMouseExited
 
     private void bntOrcamentoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bntOrcamentoMouseClicked
-        // TODO add your handling code here:
+        //remove frame
+        centro.removeAll();
+        centro.repaint();
+        centro.revalidate();
+        //add frame
+        centro.add(frmOrcamento);
+        centro.repaint();
+        centro.revalidate();
     }//GEN-LAST:event_bntOrcamentoMouseClicked
 
     private void bntOrcamentoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bntOrcamentoMouseEntered
@@ -611,7 +770,14 @@ public class frmPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_bntOrcamentoMouseExited
 
     private void bntEstoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bntEstoMouseClicked
-        // TODO add your handling code here:
+        //remove frame
+        centro.removeAll();
+        centro.repaint();
+        centro.revalidate();
+        //add frame
+        centro.add(frmEstoque);
+        centro.repaint();
+        centro.revalidate();
     }//GEN-LAST:event_bntEstoMouseClicked
 
     private void bntEstoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bntEstoMouseEntered
@@ -626,11 +792,31 @@ public class frmPrincipal extends javax.swing.JFrame {
 
     private void eventFechaMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_eventFechaMenuMouseClicked
         //fechar o menu com click no lado de fora
-        clickButton(bntExpandir, detalhe, 0);
+        clickButton(bntExpandir, detalhe1, 0);
         expandir(menu, abertoFechado);
         SwingUtilities.updateComponentTreeUI(this);
         abertoFechado=false;
     }//GEN-LAST:event_eventFechaMenuMouseClicked
+
+    private void detalhe1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_detalhe1MouseEntered
+        clickButton(bntExpandir, detalhe1, 1);
+    }//GEN-LAST:event_detalhe1MouseEntered
+
+    private void detalhe1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_detalhe1MouseExited
+        clickButton(bntExpandir, detalhe1, 0);
+    }//GEN-LAST:event_detalhe1MouseExited
+
+    private void bntHomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bntHomeMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bntHomeMouseClicked
+
+    private void bntHomeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bntHomeMouseEntered
+        clickButton(bntHome, detalhe2, 1);
+    }//GEN-LAST:event_bntHomeMouseEntered
+
+    private void bntHomeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bntHomeMouseExited
+        clickButton(bntHome, detalhe2, 0);
+    }//GEN-LAST:event_bntHomeMouseExited
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -668,6 +854,7 @@ public class frmPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel bntEsto;
     private javax.swing.JPanel bntExpandir;
     private javax.swing.JPanel bntFornecedor;
+    private javax.swing.JPanel bntHome;
     private javax.swing.JPanel bntMax;
     private javax.swing.JPanel bntMin;
     private javax.swing.JPanel bntOrcamento;
@@ -675,8 +862,14 @@ public class frmPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel bntSair;
     private javax.swing.JPanel cabecalho;
     private javax.swing.JPanel centro;
-    private javax.swing.JPanel detalhe;
+    private javax.swing.JPanel detalhe1;
+    private javax.swing.JPanel detalhe2;
     private javax.swing.JLabel eventFechaMenu;
+    private javax.swing.JPanel frmCliente;
+    private javax.swing.JPanel frmEstoque;
+    private javax.swing.JPanel frmFornecedor;
+    private javax.swing.JPanel frmOrcamento;
+    private javax.swing.JPanel frmProduto;
     private javax.swing.JLabel iconUser;
     private javax.swing.JLabel lblCadastro;
     private javax.swing.JLabel lblCliente;
@@ -684,6 +877,7 @@ public class frmPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel lblEstoque;
     private javax.swing.JLabel lblExpandir;
     private javax.swing.JLabel lblFornecedor;
+    private javax.swing.JLabel lblHome;
     private javax.swing.JLabel lblMax;
     private javax.swing.JLabel lblMin;
     private javax.swing.JLabel lblOrcamento;
