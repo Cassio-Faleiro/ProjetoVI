@@ -59,6 +59,7 @@ public class frmPrincipal extends javax.swing.JFrame {
         bntEsto = new javax.swing.JPanel();
         lblEsto = new javax.swing.JLabel();
         centro = new javax.swing.JPanel();
+        eventFechaMenu = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -428,15 +429,21 @@ public class frmPrincipal extends javax.swing.JFrame {
         centro.setBackground(new java.awt.Color(255, 255, 255));
         centro.setForeground(new java.awt.Color(204, 204, 204));
 
+        eventFechaMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                eventFechaMenuMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout centroLayout = new javax.swing.GroupLayout(centro);
         centro.setLayout(centroLayout);
         centroLayout.setHorizontalGroup(
             centroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1045, Short.MAX_VALUE)
+            .addComponent(eventFechaMenu, javax.swing.GroupLayout.DEFAULT_SIZE, 1045, Short.MAX_VALUE)
         );
         centroLayout.setVerticalGroup(
             centroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 668, Short.MAX_VALUE)
+            .addComponent(eventFechaMenu, javax.swing.GroupLayout.DEFAULT_SIZE, 668, Short.MAX_VALUE)
         );
 
         getContentPane().add(centro, java.awt.BorderLayout.CENTER);
@@ -617,6 +624,14 @@ public class frmPrincipal extends javax.swing.JFrame {
         hoverForeground(lblEsto, new Color(204,204,204));
     }//GEN-LAST:event_bntEstoMouseExited
 
+    private void eventFechaMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_eventFechaMenuMouseClicked
+        //fechar o menu com click no lado de fora
+        clickButton(bntExpandir, detalhe, 0);
+        expandir(menu, abertoFechado);
+        SwingUtilities.updateComponentTreeUI(this);
+        abertoFechado=false;
+    }//GEN-LAST:event_eventFechaMenuMouseClicked
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -661,6 +676,7 @@ public class frmPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel cabecalho;
     private javax.swing.JPanel centro;
     private javax.swing.JPanel detalhe;
+    private javax.swing.JLabel eventFechaMenu;
     private javax.swing.JLabel iconUser;
     private javax.swing.JLabel lblCadastro;
     private javax.swing.JLabel lblCliente;
