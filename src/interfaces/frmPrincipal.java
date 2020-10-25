@@ -26,6 +26,7 @@ public class frmPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         grupoSexoMeF = new javax.swing.ButtonGroup();
+        grupoSituacao = new javax.swing.ButtonGroup();
         cabecalho = new javax.swing.JPanel();
         minMaxSair = new javax.swing.JPanel();
         bntSair = new javax.swing.JPanel();
@@ -81,13 +82,33 @@ public class frmPrincipal extends javax.swing.JFrame {
         lvlNumero = new javax.swing.JLabel();
         txtNumero = new javax.swing.JTextField();
         lblBairro = new javax.swing.JLabel();
-        txtBairro = new javax.swing.JTextField();
-        lblLagradouro = new javax.swing.JLabel();
-        txtLagradouro = new javax.swing.JTextField();
+        cbBairro = new javax.swing.JComboBox<>();
         lvlCEP = new javax.swing.JLabel();
         txtCPF2 = new javax.swing.JFormattedTextField();
         lblCidade = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        cbCidade = new javax.swing.JComboBox<>();
+        lvlEstado = new javax.swing.JLabel();
+        cbEstado = new javax.swing.JComboBox<>();
+        lvlComplemento = new javax.swing.JLabel();
+        txaComplemento = new javax.swing.JTextArea();
+        pnlCadastroCompleto = new javax.swing.JPanel();
+        lblEmail = new javax.swing.JLabel();
+        txtEmail = new javax.swing.JTextField();
+        lblSituacao = new javax.swing.JLabel();
+        rbAtivo = new javax.swing.JRadioButton();
+        rbBloqueado = new javax.swing.JRadioButton();
+        rbInativo = new javax.swing.JRadioButton();
+        lblContato = new javax.swing.JLabel();
+        txtContato = new javax.swing.JFormattedTextField();
+        lblTipoCadastro = new javax.swing.JLabel();
+        rbCliente = new javax.swing.JRadioButton();
+        rbFornecedor = new javax.swing.JRadioButton();
+        rbUsuário = new javax.swing.JRadioButton();
+        bntCadastro = new keeptoo.KButton();
+        Mural = new keeptoo.KGradientPanel();
+        lblTitulo = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        lvlIcon = new javax.swing.JLabel();
         frmFornecedor = new javax.swing.JPanel();
         frmProduto = new javax.swing.JPanel();
         frmOrcamento = new javax.swing.JPanel();
@@ -95,6 +116,7 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(1045, 668));
 
         cabecalho.setBackground(new java.awt.Color(9, 22, 50));
         cabecalho.setMinimumSize(new java.awt.Dimension(1090, 70));
@@ -528,14 +550,14 @@ public class frmPrincipal extends javax.swing.JFrame {
         frmCliente.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         pnlCadastroBasico1.setBackground(new java.awt.Color(255, 255, 255));
-        pnlCadastroBasico1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cadastro", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Nirmala UI", 1, 14))); // NOI18N
+        pnlCadastroBasico1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cadastro Básico", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Nirmala UI", 1, 14))); // NOI18N
 
         lblNome1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblNome1.setForeground(new java.awt.Color(102, 102, 102));
         lblNome1.setText("Nome");
 
         txtNome1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        txtNome1.setForeground(new java.awt.Color(153, 153, 153));
+        txtNome1.setForeground(new java.awt.Color(102, 102, 102));
         txtNome1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(51, 204, 255)));
 
         lvlCPF1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -543,7 +565,7 @@ public class frmPrincipal extends javax.swing.JFrame {
         lvlCPF1.setText("CPF");
 
         txtCPF1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(51, 204, 255)));
-        txtCPF1.setForeground(new java.awt.Color(153, 153, 153));
+        txtCPF1.setForeground(new java.awt.Color(102, 102, 102));
         try {
             txtCPF1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
         } catch (java.text.ParseException ex) {
@@ -568,7 +590,7 @@ public class frmPrincipal extends javax.swing.JFrame {
         rbMasculino1.setText("Maculino");
 
         txtSobrenome1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        txtSobrenome1.setForeground(new java.awt.Color(153, 153, 153));
+        txtSobrenome1.setForeground(new java.awt.Color(102, 102, 102));
         txtSobrenome1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(51, 204, 255)));
 
         lblSobrenome1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -625,7 +647,7 @@ public class frmPrincipal extends javax.swing.JFrame {
                 .addContainerGap(18, Short.MAX_VALUE))
         );
 
-        frmCliente.add(pnlCadastroBasico1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 570, 190));
+        frmCliente.add(pnlCadastroBasico1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 570, 190));
 
         pnlEndereco.setBackground(new java.awt.Color(255, 255, 255));
         pnlEndereco.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Endereço", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Nirmala UI", 1, 14))); // NOI18N
@@ -634,70 +656,195 @@ public class frmPrincipal extends javax.swing.JFrame {
         lblRua.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblRua.setForeground(new java.awt.Color(102, 102, 102));
         lblRua.setText("Rua");
-        pnlEndereco.add(lblRua, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 100, -1));
+        pnlEndereco.add(lblRua, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 100, -1));
 
         txtRua.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        txtRua.setForeground(new java.awt.Color(153, 153, 153));
+        txtRua.setForeground(new java.awt.Color(102, 102, 102));
         txtRua.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(51, 204, 255)));
-        pnlEndereco.add(txtRua, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 210, 20));
+        pnlEndereco.add(txtRua, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 210, 20));
 
         lvlNumero.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lvlNumero.setForeground(new java.awt.Color(102, 102, 102));
         lvlNumero.setText("Número");
-        pnlEndereco.add(lvlNumero, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 40, 50, -1));
+        pnlEndereco.add(lvlNumero, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 30, 50, -1));
 
         txtNumero.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        txtNumero.setForeground(new java.awt.Color(153, 153, 153));
+        txtNumero.setForeground(new java.awt.Color(102, 102, 102));
         txtNumero.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(51, 204, 255)));
-        pnlEndereco.add(txtNumero, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 70, 110, 20));
+        pnlEndereco.add(txtNumero, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 60, 110, 20));
 
         lblBairro.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblBairro.setForeground(new java.awt.Color(102, 102, 102));
         lblBairro.setText("Bairro");
-        pnlEndereco.add(lblBairro, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 100, -1));
+        pnlEndereco.add(lblBairro, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 100, -1));
 
-        txtBairro.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        txtBairro.setForeground(new java.awt.Color(153, 153, 153));
-        txtBairro.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(51, 204, 255)));
-        pnlEndereco.add(txtBairro, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 210, 20));
-
-        lblLagradouro.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        lblLagradouro.setForeground(new java.awt.Color(102, 102, 102));
-        lblLagradouro.setText("Lagradouro");
-        pnlEndereco.add(lblLagradouro, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 80, -1));
-
-        txtLagradouro.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        txtLagradouro.setForeground(new java.awt.Color(153, 153, 153));
-        txtLagradouro.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(51, 204, 255)));
-        pnlEndereco.add(txtLagradouro, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 210, 20));
+        cbBairro.setBackground(new java.awt.Color(255, 255, 255));
+        cbBairro.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        cbBairro.setForeground(new java.awt.Color(153, 153, 153));
+        cbBairro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecionar...", "Aviação", "Centro", "Cidade Nova", "Xangrila" }));
+        pnlEndereco.add(cbBairro, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 210, -1));
 
         lvlCEP.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lvlCEP.setForeground(new java.awt.Color(102, 102, 102));
         lvlCEP.setText("CEP");
-        pnlEndereco.add(lvlCEP, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 120, 50, -1));
+        pnlEndereco.add(lvlCEP, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, 50, -1));
 
         txtCPF2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(51, 204, 255)));
-        txtCPF2.setForeground(new java.awt.Color(153, 153, 153));
+        txtCPF2.setForeground(new java.awt.Color(102, 102, 102));
         try {
             txtCPF2.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####-###")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
         txtCPF2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        pnlEndereco.add(txtCPF2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 150, 110, 20));
+        pnlEndereco.add(txtCPF2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 140, 110, 20));
 
         lblCidade.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblCidade.setForeground(new java.awt.Color(102, 102, 102));
         lblCidade.setText("Cidade");
-        pnlEndereco.add(lblCidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 80, -1));
+        pnlEndereco.add(lblCidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 80, 20));
 
-        jComboBox1.setBackground(new java.awt.Color(255, 255, 255));
-        jComboBox1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jComboBox1.setForeground(new java.awt.Color(153, 153, 153));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecionar...", "Venâncio", "Lajeado", "Santa Cruz do Sul" }));
-        pnlEndereco.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 210, -1));
+        cbCidade.setBackground(new java.awt.Color(255, 255, 255));
+        cbCidade.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        cbCidade.setForeground(new java.awt.Color(153, 153, 153));
+        cbCidade.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecionar...", "Venâncio", "Lajeado", "Santa Cruz do Sul" }));
+        pnlEndereco.add(cbCidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 210, -1));
 
-        frmCliente.add(pnlEndereco, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 570, 390));
+        lvlEstado.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lvlEstado.setForeground(new java.awt.Color(102, 102, 102));
+        lvlEstado.setText("Estado");
+        pnlEndereco.add(lvlEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 190, 80, -1));
+
+        cbEstado.setBackground(new java.awt.Color(255, 255, 255));
+        cbEstado.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        cbEstado.setForeground(new java.awt.Color(153, 153, 153));
+        cbEstado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecionar...", "RJ", "RS", "SC", "SP", "PR" }));
+        pnlEndereco.add(cbEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 220, 110, -1));
+
+        lvlComplemento.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lvlComplemento.setForeground(new java.awt.Color(102, 102, 102));
+        lvlComplemento.setText("Complemento");
+        pnlEndereco.add(lvlComplemento, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 100, -1));
+
+        txaComplemento.setBackground(new java.awt.Color(204, 204, 204));
+        txaComplemento.setColumns(20);
+        txaComplemento.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        txaComplemento.setForeground(new java.awt.Color(102, 102, 102));
+        txaComplemento.setRows(5);
+        txaComplemento.setBorder(null);
+        pnlEndereco.add(txaComplemento, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 390, 100));
+
+        frmCliente.add(pnlEndereco, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 140, 450, 450));
+
+        pnlCadastroCompleto.setBackground(new java.awt.Color(255, 255, 255));
+        pnlCadastroCompleto.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cadastro Completo", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 14))); // NOI18N
+        pnlCadastroCompleto.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblEmail.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblEmail.setForeground(new java.awt.Color(102, 102, 102));
+        lblEmail.setText("Email");
+        pnlCadastroCompleto.add(lblEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 100, -1));
+
+        txtEmail.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        txtEmail.setForeground(new java.awt.Color(102, 102, 102));
+        txtEmail.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(51, 204, 255)));
+        pnlCadastroCompleto.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 210, 20));
+
+        lblSituacao.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblSituacao.setForeground(new java.awt.Color(102, 102, 102));
+        lblSituacao.setText("Situação");
+        pnlCadastroCompleto.add(lblSituacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 100, -1));
+
+        rbAtivo.setBackground(new java.awt.Color(255, 255, 255));
+        grupoSituacao.add(rbAtivo);
+        rbAtivo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        rbAtivo.setForeground(new java.awt.Color(102, 102, 102));
+        rbAtivo.setText("Ativo");
+        pnlCadastroCompleto.add(rbAtivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 70, 20));
+
+        rbBloqueado.setBackground(new java.awt.Color(255, 255, 255));
+        grupoSituacao.add(rbBloqueado);
+        rbBloqueado.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        rbBloqueado.setForeground(new java.awt.Color(102, 102, 102));
+        rbBloqueado.setText("Bloqueada");
+        pnlCadastroCompleto.add(rbBloqueado, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 210, 110, 20));
+
+        rbInativo.setBackground(new java.awt.Color(255, 255, 255));
+        grupoSituacao.add(rbInativo);
+        rbInativo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        rbInativo.setForeground(new java.awt.Color(102, 102, 102));
+        rbInativo.setText("Inativo");
+        pnlCadastroCompleto.add(rbInativo, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 210, 90, 20));
+
+        lblContato.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblContato.setForeground(new java.awt.Color(102, 102, 102));
+        lblContato.setText("Contato");
+        pnlCadastroCompleto.add(lblContato, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 40, 100, -1));
+
+        txtContato.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(51, 204, 255)));
+        txtContato.setForeground(new java.awt.Color(102, 102, 102));
+        try {
+            txtContato.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)#####-####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        txtContato.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        pnlCadastroCompleto.add(txtContato, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 70, 110, 20));
+
+        lblTipoCadastro.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblTipoCadastro.setForeground(new java.awt.Color(102, 102, 102));
+        lblTipoCadastro.setText("Tipo de Cadastro");
+        pnlCadastroCompleto.add(lblTipoCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 100, -1));
+
+        rbCliente.setBackground(new java.awt.Color(255, 255, 255));
+        rbCliente.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        rbCliente.setForeground(new java.awt.Color(102, 102, 102));
+        rbCliente.setText("Cliente");
+        pnlCadastroCompleto.add(rbCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 80, 20));
+
+        rbFornecedor.setBackground(new java.awt.Color(255, 255, 255));
+        rbFornecedor.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        rbFornecedor.setForeground(new java.awt.Color(102, 102, 102));
+        rbFornecedor.setText("Fornecedor");
+        pnlCadastroCompleto.add(rbFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, 110, 20));
+
+        rbUsuário.setBackground(new java.awt.Color(255, 255, 255));
+        rbUsuário.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        rbUsuário.setForeground(new java.awt.Color(102, 102, 102));
+        rbUsuário.setText("Usuário");
+        pnlCadastroCompleto.add(rbUsuário, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, 90, 20));
+
+        frmCliente.add(pnlCadastroCompleto, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, 570, 250));
+
+        bntCadastro.setBorder(null);
+        bntCadastro.setText("Cadastrar");
+        bntCadastro.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        bntCadastro.setkBackGroundColor(new java.awt.Color(91, 98, 218));
+        bntCadastro.setkEndColor(new java.awt.Color(18, 44, 83));
+        bntCadastro.setkHoverEndColor(new java.awt.Color(22, 54, 95));
+        bntCadastro.setkHoverForeGround(new java.awt.Color(255, 255, 255));
+        bntCadastro.setkHoverStartColor(new java.awt.Color(22, 54, 95));
+        bntCadastro.setkStartColor(new java.awt.Color(91, 98, 218));
+        frmCliente.add(bntCadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(895, 600, 150, 40));
+
+        Mural.setkBorderRadius(0);
+        Mural.setkEndColor(new java.awt.Color(0, 204, 204));
+        Mural.setkStartColor(new java.awt.Color(20, 85, 217));
+        Mural.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblTitulo.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lblTitulo.setForeground(new java.awt.Color(255, 255, 255));
+        lblTitulo.setText("Cadastro de Cliente.....");
+        Mural.add(lblTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 180, 40));
+
+        jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        Mural.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, 10, 70));
+
+        lvlIcon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lvlIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/user_group_100px.png"))); // NOI18N
+        Mural.add(lvlIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 10, -1, 70));
+
+        frmCliente.add(Mural, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1120, 90));
 
         telas.add(frmCliente, "card3");
 
@@ -707,7 +854,7 @@ public class frmPrincipal extends javax.swing.JFrame {
         frmFornecedor.setLayout(frmFornecedorLayout);
         frmFornecedorLayout.setHorizontalGroup(
             frmFornecedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1045, Short.MAX_VALUE)
+            .addGap(0, 1117, Short.MAX_VALUE)
         );
         frmFornecedorLayout.setVerticalGroup(
             frmFornecedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -722,7 +869,7 @@ public class frmPrincipal extends javax.swing.JFrame {
         frmProduto.setLayout(frmProdutoLayout);
         frmProdutoLayout.setHorizontalGroup(
             frmProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1045, Short.MAX_VALUE)
+            .addGap(0, 1117, Short.MAX_VALUE)
         );
         frmProdutoLayout.setVerticalGroup(
             frmProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -737,7 +884,7 @@ public class frmPrincipal extends javax.swing.JFrame {
         frmOrcamento.setLayout(frmOrcamentoLayout);
         frmOrcamentoLayout.setHorizontalGroup(
             frmOrcamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1045, Short.MAX_VALUE)
+            .addGap(0, 1117, Short.MAX_VALUE)
         );
         frmOrcamentoLayout.setVerticalGroup(
             frmOrcamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -752,7 +899,7 @@ public class frmPrincipal extends javax.swing.JFrame {
         frmEstoque.setLayout(frmEstoqueLayout);
         frmEstoqueLayout.setHorizontalGroup(
             frmEstoqueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1045, Short.MAX_VALUE)
+            .addGap(0, 1117, Short.MAX_VALUE)
         );
         frmEstoqueLayout.setVerticalGroup(
             frmEstoqueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -763,7 +910,7 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         getContentPane().add(telas, java.awt.BorderLayout.CENTER);
 
-        setSize(new java.awt.Dimension(1105, 718));
+        setSize(new java.awt.Dimension(1177, 718));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -1034,6 +1181,8 @@ public class frmPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private keeptoo.KGradientPanel Mural;
+    private keeptoo.KButton bntCadastro;
     private javax.swing.JPanel bntCliente;
     private javax.swing.JPanel bntEsto;
     private javax.swing.JPanel bntExpandir;
@@ -1045,6 +1194,9 @@ public class frmPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel bntProduto;
     private javax.swing.JPanel bntSair;
     private javax.swing.JPanel cabecalho;
+    private javax.swing.JComboBox<String> cbBairro;
+    private javax.swing.JComboBox<String> cbCidade;
+    private javax.swing.JComboBox<String> cbEstado;
     private javax.swing.JPanel detalhe1;
     private javax.swing.JPanel detalhe2;
     private javax.swing.JLabel eventFechaMenu;
@@ -1054,18 +1206,20 @@ public class frmPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel frmOrcamento;
     private javax.swing.JPanel frmProduto;
     private javax.swing.ButtonGroup grupoSexoMeF;
+    private javax.swing.ButtonGroup grupoSituacao;
     private javax.swing.JLabel iconUser;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel lblBairro;
     private javax.swing.JLabel lblCadastro;
     private javax.swing.JLabel lblCidade;
     private javax.swing.JLabel lblCliente;
+    private javax.swing.JLabel lblContato;
+    private javax.swing.JLabel lblEmail;
     private javax.swing.JLabel lblEsto;
     private javax.swing.JLabel lblEstoque;
     private javax.swing.JLabel lblExpandir;
     private javax.swing.JLabel lblFornecedor;
     private javax.swing.JLabel lblHome;
-    private javax.swing.JLabel lblLagradouro;
     private javax.swing.JLabel lblMax;
     private javax.swing.JLabel lblMin;
     private javax.swing.JLabel lblNome1;
@@ -1075,27 +1229,41 @@ public class frmPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel lblSair;
     private javax.swing.JLabel lblServico;
     private javax.swing.JLabel lblSexo1;
+    private javax.swing.JLabel lblSituacao;
     private javax.swing.JLabel lblSobrenome1;
+    private javax.swing.JLabel lblTipoCadastro;
+    private javax.swing.JLabel lblTitulo;
     private javax.swing.JLabel lblUser;
     private javax.swing.JLabel lvlCEP;
     private javax.swing.JLabel lvlCPF1;
+    private javax.swing.JLabel lvlComplemento;
+    private javax.swing.JLabel lvlEstado;
+    private javax.swing.JLabel lvlIcon;
     private javax.swing.JLabel lvlNumero;
     private keeptoo.KGradientPanel menu;
     private keeptoo.KGradientPanel menuExpandido;
     private keeptoo.KGradientPanel menuIcones;
     private javax.swing.JPanel minMaxSair;
     private javax.swing.JPanel pnlCadastroBasico1;
+    private javax.swing.JPanel pnlCadastroCompleto;
     private javax.swing.JPanel pnlEndereco;
+    private javax.swing.JRadioButton rbAtivo;
+    private javax.swing.JRadioButton rbBloqueado;
+    private javax.swing.JRadioButton rbCliente;
     private javax.swing.JRadioButton rbFeminino1;
+    private javax.swing.JRadioButton rbFornecedor;
+    private javax.swing.JRadioButton rbInativo;
     private javax.swing.JRadioButton rbMasculino1;
+    private javax.swing.JRadioButton rbUsuário;
     private javax.swing.JSeparator separadorCadastro;
     private javax.swing.JSeparator separadorEstoque;
     private javax.swing.JSeparator separadorServico;
     private javax.swing.JPanel telas;
-    private javax.swing.JTextField txtBairro;
+    private javax.swing.JTextArea txaComplemento;
     private javax.swing.JFormattedTextField txtCPF1;
     private javax.swing.JFormattedTextField txtCPF2;
-    private javax.swing.JTextField txtLagradouro;
+    private javax.swing.JFormattedTextField txtContato;
+    private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtNome1;
     private javax.swing.JTextField txtNumero;
     private javax.swing.JTextField txtRua;
