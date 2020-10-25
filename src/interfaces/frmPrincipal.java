@@ -229,7 +229,7 @@ public class frmPrincipal extends javax.swing.JFrame {
         userLoginLayout.setVerticalGroup(
             userLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, userLoginLayout.createSequentialGroup()
-                .addContainerGap(12, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(userLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(iconUser)
                     .addComponent(lblUser, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -287,6 +287,12 @@ public class frmPrincipal extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblExpandirMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblExpandirMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblExpandirMouseExited(evt);
+            }
         });
 
         javax.swing.GroupLayout bntExpandirLayout = new javax.swing.GroupLayout(bntExpandir);
@@ -295,13 +301,15 @@ public class frmPrincipal extends javax.swing.JFrame {
             bntExpandirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bntExpandirLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(lblExpandir, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(lblExpandir, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(47, 47, 47))
         );
         bntExpandirLayout.setVerticalGroup(
             bntExpandirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bntExpandirLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(lblExpandir, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(lblExpandir, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(535, 535, 535))
         );
 
         menuIcones.add(bntExpandir, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 60, 50));
@@ -324,20 +332,20 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         bntHome.setBackground(new java.awt.Color(9, 22, 50));
         bntHome.setPreferredSize(new java.awt.Dimension(32, 32));
-        bntHome.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                bntHomeMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                bntHomeMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                bntHomeMouseExited(evt);
-            }
-        });
 
         lblHome.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/home_32px.png"))); // NOI18N
+        lblHome.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblHomeMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblHomeMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblHomeMouseExited(evt);
+            }
+        });
 
         javax.swing.GroupLayout bntHomeLayout = new javax.swing.GroupLayout(bntHome);
         bntHome.setLayout(bntHomeLayout);
@@ -854,11 +862,11 @@ public class frmPrincipal extends javax.swing.JFrame {
         frmFornecedor.setLayout(frmFornecedorLayout);
         frmFornecedorLayout.setHorizontalGroup(
             frmFornecedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1117, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         frmFornecedorLayout.setVerticalGroup(
             frmFornecedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 668, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
         telas.add(frmFornecedor, "card3");
@@ -869,11 +877,11 @@ public class frmPrincipal extends javax.swing.JFrame {
         frmProduto.setLayout(frmProdutoLayout);
         frmProdutoLayout.setHorizontalGroup(
             frmProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1117, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         frmProdutoLayout.setVerticalGroup(
             frmProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 668, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
         telas.add(frmProduto, "card3");
@@ -884,11 +892,11 @@ public class frmPrincipal extends javax.swing.JFrame {
         frmOrcamento.setLayout(frmOrcamentoLayout);
         frmOrcamentoLayout.setHorizontalGroup(
             frmOrcamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1117, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         frmOrcamentoLayout.setVerticalGroup(
             frmOrcamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 668, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
         telas.add(frmOrcamento, "card3");
@@ -914,7 +922,6 @@ public class frmPrincipal extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    
     //alterar a cor do botão quando cursor passar por cima
     public void hover(JPanel hover, Color rand){
         hover.setBackground(rand);
@@ -988,7 +995,7 @@ public class frmPrincipal extends javax.swing.JFrame {
     private void lblExpandirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblExpandirMouseClicked
         //alterar a cor do botão que expandi o menu
         clickButton(bntExpandir, detalhe1, 1);
-                
+     
         //expandir o menu
         if(abertoFechado == true){
             //alterar a cor do botão que expandi o menu
@@ -1137,17 +1144,25 @@ public class frmPrincipal extends javax.swing.JFrame {
         clickButton(bntExpandir, detalhe1, 0);
     }//GEN-LAST:event_detalhe1MouseExited
 
-    private void bntHomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bntHomeMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_bntHomeMouseClicked
+    private void lblExpandirMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblExpandirMouseEntered
+        clickButton(bntExpandir, detalhe1, 1);
+    }//GEN-LAST:event_lblExpandirMouseEntered
 
-    private void bntHomeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bntHomeMouseEntered
+    private void lblExpandirMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblExpandirMouseExited
+        clickButton(bntExpandir, detalhe1, 0);
+    }//GEN-LAST:event_lblExpandirMouseExited
+
+    private void lblHomeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblHomeMouseEntered
         clickButton(bntHome, detalhe2, 1);
-    }//GEN-LAST:event_bntHomeMouseEntered
+    }//GEN-LAST:event_lblHomeMouseEntered
 
-    private void bntHomeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bntHomeMouseExited
+    private void lblHomeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblHomeMouseExited
         clickButton(bntHome, detalhe2, 0);
-    }//GEN-LAST:event_bntHomeMouseExited
+    }//GEN-LAST:event_lblHomeMouseExited
+
+    private void lblHomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblHomeMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblHomeMouseClicked
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
