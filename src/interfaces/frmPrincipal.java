@@ -18,6 +18,11 @@ public class frmPrincipal extends javax.swing.JFrame {
     
     public frmPrincipal() {
         initComponents();
+        //inicia na tela home
+        //remove frame
+        telas.removeAll();
+        //add frame
+        telas.add(frmHome);
         this.setExtendedState(frmPrincipal.MAXIMIZED_BOTH);
         clickButton(bntExpandir, detalhe1, 0);     
     }
@@ -28,6 +33,7 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         grupoSexoMeF = new javax.swing.ButtonGroup();
         grupoSituacao = new javax.swing.ButtonGroup();
+        grupoTipoCadastro = new javax.swing.ButtonGroup();
         cabecalho = new javax.swing.JPanel();
         minMaxSair = new javax.swing.JPanel();
         bntSair = new javax.swing.JPanel();
@@ -45,6 +51,10 @@ public class frmPrincipal extends javax.swing.JFrame {
         detalhe2 = new javax.swing.JPanel();
         bntHome = new javax.swing.JPanel();
         lblHome = new javax.swing.JLabel();
+        bntInfo = new javax.swing.JPanel();
+        lblInfo = new javax.swing.JLabel();
+        bntTrocaUsuario = new javax.swing.JPanel();
+        lblTrocaUsuario = new javax.swing.JLabel();
         menuExpandido = new keeptoo.KGradientPanel();
         lblCadastro = new javax.swing.JLabel();
         separadorCadastro = new javax.swing.JSeparator();
@@ -64,6 +74,9 @@ public class frmPrincipal extends javax.swing.JFrame {
         lblEsto = new javax.swing.JLabel();
         telas = new javax.swing.JPanel();
         eventFechaMenu = new javax.swing.JLabel();
+        frmHome = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblClientes = new javax.swing.JTable();
         frmCliente = new javax.swing.JPanel();
         Mural = new keeptoo.KGradientPanel();
         lblTitulo = new javax.swing.JLabel();
@@ -112,11 +125,10 @@ public class frmPrincipal extends javax.swing.JFrame {
         frmFornecedor = new javax.swing.JPanel();
         frmProduto = new javax.swing.JPanel();
         frmOrcamento = new javax.swing.JPanel();
-        frmEstoque = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 0, 0));
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(1045, 668));
 
         cabecalho.setBackground(new java.awt.Color(9, 22, 50));
         cabecalho.setMinimumSize(new java.awt.Dimension(1090, 70));
@@ -207,7 +219,7 @@ public class frmPrincipal extends javax.swing.JFrame {
         userLoginLayout.setVerticalGroup(
             userLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, userLoginLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(12, Short.MAX_VALUE)
                 .addGroup(userLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(iconUser)
                     .addComponent(lblUser, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -251,7 +263,7 @@ public class frmPrincipal extends javax.swing.JFrame {
         );
         detalhe1Layout.setVerticalGroup(
             detalhe1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 5, Short.MAX_VALUE)
         );
 
         menuIcones.add(detalhe1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 60, 5));
@@ -335,10 +347,76 @@ public class frmPrincipal extends javax.swing.JFrame {
         );
         bntHomeLayout.setVerticalGroup(
             bntHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblHome, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bntHomeLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(lblHome, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        menuIcones.add(bntHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 60, 50));
+        menuIcones.add(bntHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 60, 50));
+
+        bntInfo.setBackground(new java.awt.Color(22, 54, 95));
+        bntInfo.setPreferredSize(new java.awt.Dimension(32, 32));
+
+        lblInfo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblInfo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/info_32px.png"))); // NOI18N
+        lblInfo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblInfoMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblInfoMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblInfoMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout bntInfoLayout = new javax.swing.GroupLayout(bntInfo);
+        bntInfo.setLayout(bntInfoLayout);
+        bntInfoLayout.setHorizontalGroup(
+            bntInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bntInfoLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(lblInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        bntInfoLayout.setVerticalGroup(
+            bntInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lblInfo, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        );
+
+        menuIcones.add(bntInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 710, 60, 50));
+
+        bntTrocaUsuario.setBackground(new java.awt.Color(22, 54, 95));
+        bntTrocaUsuario.setPreferredSize(new java.awt.Dimension(32, 32));
+
+        lblTrocaUsuario.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTrocaUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/exit_32px.png"))); // NOI18N
+        lblTrocaUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblTrocaUsuarioMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblTrocaUsuarioMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblTrocaUsuarioMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout bntTrocaUsuarioLayout = new javax.swing.GroupLayout(bntTrocaUsuario);
+        bntTrocaUsuario.setLayout(bntTrocaUsuarioLayout);
+        bntTrocaUsuarioLayout.setHorizontalGroup(
+            bntTrocaUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(bntTrocaUsuarioLayout.createSequentialGroup()
+                .addComponent(lblTrocaUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        bntTrocaUsuarioLayout.setVerticalGroup(
+            bntTrocaUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lblTrocaUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        );
+
+        menuIcones.add(bntTrocaUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 760, 60, 50));
 
         menu.add(menuIcones, java.awt.BorderLayout.LINE_START);
 
@@ -514,14 +592,14 @@ public class frmPrincipal extends javax.swing.JFrame {
                 .addComponent(separadorEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, 5, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(29, 29, 29)
                 .addComponent(bntEsto, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(189, Short.MAX_VALUE))
         );
 
         menu.add(menuExpandido, java.awt.BorderLayout.CENTER);
 
         getContentPane().add(menu, java.awt.BorderLayout.LINE_START);
 
-        telas.setBackground(new java.awt.Color(255, 255, 255));
+        telas.setBackground(new java.awt.Color(255, 0, 0));
         telas.setForeground(new java.awt.Color(204, 204, 204));
         telas.setLayout(new java.awt.CardLayout());
 
@@ -531,6 +609,50 @@ public class frmPrincipal extends javax.swing.JFrame {
             }
         });
         telas.add(eventFechaMenu, "card2");
+
+        frmHome.setBackground(new java.awt.Color(255, 255, 255));
+        frmHome.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jScrollPane1.setBorder(null);
+        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+
+        tblClientes.setAutoCreateRowSorter(true);
+        tblClientes.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        tblClientes.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "NÚMERO", "TERMO", "SIGNIFICADO", "FONTE"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tblClientes.setGridColor(new java.awt.Color(255, 255, 255));
+        tblClientes.setIntercellSpacing(new java.awt.Dimension(0, 0));
+        tblClientes.setRowHeight(20);
+        tblClientes.setSelectionBackground(new java.awt.Color(0, 153, 255));
+        tblClientes.getTableHeader().setReorderingAllowed(false);
+        tblClientes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblClientesMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(tblClientes);
+        if (tblClientes.getColumnModel().getColumnCount() > 0) {
+            tblClientes.getColumnModel().getColumn(1).setResizable(false);
+            tblClientes.getColumnModel().getColumn(2).setResizable(false);
+        }
+
+        frmHome.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 1020, -1));
+
+        telas.add(frmHome, "card3");
 
         frmCliente.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -629,16 +751,19 @@ public class frmPrincipal extends javax.swing.JFrame {
         lblTipoCadastro.setText("Tipo de Cadastro");
 
         rbCliente.setBackground(new java.awt.Color(255, 255, 255));
+        grupoTipoCadastro.add(rbCliente);
         rbCliente.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         rbCliente.setForeground(new java.awt.Color(102, 102, 102));
         rbCliente.setText("Cliente");
 
         rbFornecedor.setBackground(new java.awt.Color(255, 255, 255));
+        grupoTipoCadastro.add(rbFornecedor);
         rbFornecedor.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         rbFornecedor.setForeground(new java.awt.Color(102, 102, 102));
         rbFornecedor.setText("Fornecedor");
 
         rbUsuário.setBackground(new java.awt.Color(255, 255, 255));
+        grupoTipoCadastro.add(rbUsuário);
         rbUsuário.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         rbUsuário.setForeground(new java.awt.Color(102, 102, 102));
         rbUsuário.setText("Usuário");
@@ -982,7 +1107,7 @@ public class frmPrincipal extends javax.swing.JFrame {
         );
         frmFornecedorLayout.setVerticalGroup(
             frmFornecedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 808, Short.MAX_VALUE)
         );
 
         telas.add(frmFornecedor, "card3");
@@ -997,7 +1122,7 @@ public class frmPrincipal extends javax.swing.JFrame {
         );
         frmProdutoLayout.setVerticalGroup(
             frmProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 808, Short.MAX_VALUE)
         );
 
         telas.add(frmProduto, "card3");
@@ -1012,29 +1137,14 @@ public class frmPrincipal extends javax.swing.JFrame {
         );
         frmOrcamentoLayout.setVerticalGroup(
             frmOrcamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 808, Short.MAX_VALUE)
         );
 
         telas.add(frmOrcamento, "card3");
 
-        frmEstoque.setBackground(new java.awt.Color(51, 255, 204));
-
-        javax.swing.GroupLayout frmEstoqueLayout = new javax.swing.GroupLayout(frmEstoque);
-        frmEstoque.setLayout(frmEstoqueLayout);
-        frmEstoqueLayout.setHorizontalGroup(
-            frmEstoqueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1117, Short.MAX_VALUE)
-        );
-        frmEstoqueLayout.setVerticalGroup(
-            frmEstoqueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 668, Short.MAX_VALUE)
-        );
-
-        telas.add(frmEstoque, "card3");
-
         getContentPane().add(telas, java.awt.BorderLayout.CENTER);
 
-        setSize(new java.awt.Dimension(1177, 718));
+        setSize(new java.awt.Dimension(1177, 858));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -1067,7 +1177,7 @@ public class frmPrincipal extends javax.swing.JFrame {
             jp2.setBackground(new Color(9,22,50));
         }
     }
-   
+
     private void lblSairMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSairMouseClicked
         System.exit(0);
     }//GEN-LAST:event_lblSairMouseClicked
@@ -1213,7 +1323,7 @@ public class frmPrincipal extends javax.swing.JFrame {
         telas.repaint();
         telas.revalidate();
         //add frame
-        telas.add(frmEstoque);
+        telas.add(frmHome);
         telas.repaint();
         telas.revalidate();
     }//GEN-LAST:event_bntEstoMouseClicked
@@ -1261,8 +1371,43 @@ public class frmPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_lblHomeMouseExited
 
     private void lblHomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblHomeMouseClicked
-        // TODO add your handling code here:
+        //remove frame
+        telas.removeAll();
+        telas.repaint();
+        telas.revalidate();
+        //add frame
+        telas.add(frmHome);
+        telas.repaint();
+        telas.revalidate();
     }//GEN-LAST:event_lblHomeMouseClicked
+
+    private void lblTrocaUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblTrocaUsuarioMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblTrocaUsuarioMouseClicked
+
+    private void lblTrocaUsuarioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblTrocaUsuarioMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblTrocaUsuarioMouseEntered
+
+    private void lblTrocaUsuarioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblTrocaUsuarioMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblTrocaUsuarioMouseExited
+
+    private void lblInfoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblInfoMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblInfoMouseClicked
+
+    private void lblInfoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblInfoMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblInfoMouseEntered
+
+    private void lblInfoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblInfoMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblInfoMouseExited
+
+    private void tblClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblClientesMouseClicked
+        
+    }//GEN-LAST:event_tblClientesMouseClicked
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -1304,10 +1449,12 @@ public class frmPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel bntExpandir;
     private javax.swing.JPanel bntFornecedor;
     private javax.swing.JPanel bntHome;
+    private javax.swing.JPanel bntInfo;
     private javax.swing.JPanel bntMin;
     private javax.swing.JPanel bntOrcamento;
     private javax.swing.JPanel bntProduto;
     private javax.swing.JPanel bntSair;
+    private javax.swing.JPanel bntTrocaUsuario;
     private javax.swing.JPanel cabecalho;
     private javax.swing.JComboBox<String> cbBairro;
     private javax.swing.JComboBox<String> cbCidade;
@@ -1316,13 +1463,15 @@ public class frmPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel detalhe2;
     private javax.swing.JLabel eventFechaMenu;
     private javax.swing.JPanel frmCliente;
-    private javax.swing.JPanel frmEstoque;
     private javax.swing.JPanel frmFornecedor;
+    private javax.swing.JPanel frmHome;
     private javax.swing.JPanel frmOrcamento;
     private javax.swing.JPanel frmProduto;
     private javax.swing.ButtonGroup grupoSexoMeF;
     private javax.swing.ButtonGroup grupoSituacao;
+    private javax.swing.ButtonGroup grupoTipoCadastro;
     private javax.swing.JLabel iconUser;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel lblBairro;
     private javax.swing.JLabel lblCadastro;
@@ -1335,6 +1484,7 @@ public class frmPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel lblExpandir;
     private javax.swing.JLabel lblFornecedor;
     private javax.swing.JLabel lblHome;
+    private javax.swing.JLabel lblInfo;
     private javax.swing.JLabel lblMin;
     private javax.swing.JLabel lblNome1;
     private javax.swing.JLabel lblOrcamento;
@@ -1347,6 +1497,7 @@ public class frmPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel lblSobrenome1;
     private javax.swing.JLabel lblTipoCadastro;
     private javax.swing.JLabel lblTitulo;
+    private javax.swing.JLabel lblTrocaUsuario;
     private javax.swing.JLabel lblUser;
     private javax.swing.JLabel lvlCEP;
     private javax.swing.JLabel lvlCPF1;
@@ -1372,6 +1523,7 @@ public class frmPrincipal extends javax.swing.JFrame {
     private javax.swing.JSeparator separadorCadastro;
     private javax.swing.JSeparator separadorEstoque;
     private javax.swing.JSeparator separadorServico;
+    public javax.swing.JTable tblClientes;
     private javax.swing.JPanel telas;
     private javax.swing.JTextArea txaComplemento;
     private javax.swing.JFormattedTextField txtCPF1;
