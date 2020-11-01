@@ -75,10 +75,23 @@ public class frmPrincipal extends javax.swing.JFrame {
         telas = new javax.swing.JPanel();
         eventFechaMenu = new javax.swing.JLabel();
         frmHome = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        MuralHome = new keeptoo.KGradientPanel();
+        lblTitulo1 = new javax.swing.JLabel();
+        jSeparator2 = new javax.swing.JSeparator();
+        lvlIcon1 = new javax.swing.JLabel();
+        GridHome = new javax.swing.JPanel();
+        pnlClientes = new javax.swing.JPanel();
+        txtPesquisaNome = new javax.swing.JTextField();
+        lblPesquisaCli = new javax.swing.JLabel();
+        scrollClientes = new javax.swing.JScrollPane();
         tblClientes = new javax.swing.JTable();
+        pnlEstoque = new javax.swing.JPanel();
+        txtPesquisaProduto = new javax.swing.JTextField();
+        lblPesquisaEsto = new javax.swing.JLabel();
+        scrollEstoque = new javax.swing.JScrollPane();
+        tblEstoque = new javax.swing.JTable();
         frmCliente = new javax.swing.JPanel();
-        Mural = new keeptoo.KGradientPanel();
+        MuralCliente = new keeptoo.KGradientPanel();
         lblTitulo = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         lvlIcon = new javax.swing.JLabel();
@@ -599,7 +612,7 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         getContentPane().add(menu, java.awt.BorderLayout.LINE_START);
 
-        telas.setBackground(new java.awt.Color(255, 0, 0));
+        telas.setBackground(new java.awt.Color(255, 255, 255));
         telas.setForeground(new java.awt.Color(204, 204, 204));
         telas.setLayout(new java.awt.CardLayout());
 
@@ -611,19 +624,52 @@ public class frmPrincipal extends javax.swing.JFrame {
         telas.add(eventFechaMenu, "card2");
 
         frmHome.setBackground(new java.awt.Color(255, 255, 255));
-        frmHome.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        frmHome.setForeground(new java.awt.Color(255, 255, 255));
 
-        jScrollPane1.setBorder(null);
-        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        MuralHome.setkBorderRadius(0);
+        MuralHome.setkEndColor(new java.awt.Color(0, 204, 204));
+        MuralHome.setkStartColor(new java.awt.Color(20, 85, 217));
+        MuralHome.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblTitulo1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lblTitulo1.setForeground(new java.awt.Color(255, 255, 255));
+        lblTitulo1.setText("Cadastro de Cliente.....");
+        MuralHome.add(lblTitulo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 180, 40));
+
+        jSeparator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        MuralHome.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, 10, 70));
+
+        lvlIcon1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lvlIcon1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/user_group_100px.png"))); // NOI18N
+        MuralHome.add(lvlIcon1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 10, -1, 70));
+
+        GridHome.setBackground(new java.awt.Color(255, 255, 255));
+        GridHome.setLayout(new java.awt.GridLayout(2, 0, 0, 10));
+
+        pnlClientes.setBackground(new java.awt.Color(255, 255, 255));
+        pnlClientes.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Clientes", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 14))); // NOI18N
+
+        txtPesquisaNome.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        txtPesquisaNome.setForeground(new java.awt.Color(102, 102, 102));
+        txtPesquisaNome.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(51, 204, 255)));
+
+        lblPesquisaCli.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblPesquisaCli.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/search_20px.png"))); // NOI18N
+
+        scrollClientes.setBackground(new java.awt.Color(255, 255, 255));
+        scrollClientes.setBorder(null);
+        scrollClientes.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
         tblClientes.setAutoCreateRowSorter(true);
-        tblClientes.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        tblClientes.setBackground(new java.awt.Color(255, 255, 255));
+        tblClientes.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        tblClientes.setForeground(new java.awt.Color(255, 255, 255));
         tblClientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "NÚMERO", "TERMO", "SIGNIFICADO", "FONTE"
+                "NÚMERO", "NOME", "SOBRENOME", "CIDADE"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -637,41 +683,145 @@ public class frmPrincipal extends javax.swing.JFrame {
         tblClientes.setGridColor(new java.awt.Color(255, 255, 255));
         tblClientes.setIntercellSpacing(new java.awt.Dimension(0, 0));
         tblClientes.setRowHeight(20);
-        tblClientes.setSelectionBackground(new java.awt.Color(0, 153, 255));
+        tblClientes.setSelectionBackground(new java.awt.Color(102, 204, 255));
+        tblClientes.setSelectionForeground(new java.awt.Color(51, 51, 255));
         tblClientes.getTableHeader().setReorderingAllowed(false);
         tblClientes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tblClientesMouseClicked(evt);
             }
         });
-        jScrollPane1.setViewportView(tblClientes);
-        if (tblClientes.getColumnModel().getColumnCount() > 0) {
-            tblClientes.getColumnModel().getColumn(1).setResizable(false);
-            tblClientes.getColumnModel().getColumn(2).setResizable(false);
-        }
+        scrollClientes.setViewportView(tblClientes);
 
-        frmHome.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 1020, -1));
+        javax.swing.GroupLayout pnlClientesLayout = new javax.swing.GroupLayout(pnlClientes);
+        pnlClientes.setLayout(pnlClientesLayout);
+        pnlClientesLayout.setHorizontalGroup(
+            pnlClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlClientesLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblPesquisaCli)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtPesquisaNome, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(scrollClientes, javax.swing.GroupLayout.DEFAULT_SIZE, 1082, Short.MAX_VALUE)
+        );
+        pnlClientesLayout.setVerticalGroup(
+            pnlClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlClientesLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(pnlClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblPesquisaCli, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(txtPesquisaNome, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(scrollClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        GridHome.add(pnlClientes);
+
+        pnlEstoque.setBackground(new java.awt.Color(255, 255, 255));
+        pnlEstoque.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Estoque", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 14))); // NOI18N
+
+        txtPesquisaProduto.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        txtPesquisaProduto.setForeground(new java.awt.Color(102, 102, 102));
+        txtPesquisaProduto.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(51, 204, 255)));
+
+        lblPesquisaEsto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/search_20px.png"))); // NOI18N
+
+        scrollEstoque.setBorder(null);
+        scrollEstoque.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+
+        tblEstoque.setAutoCreateRowSorter(true);
+        tblEstoque.setBackground(new java.awt.Color(255, 255, 255));
+        tblEstoque.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        tblEstoque.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "NÚMERO", "PRODUTO", "VALOR", "QUANTIDADE"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tblEstoque.setGridColor(new java.awt.Color(255, 255, 255));
+        tblEstoque.setIntercellSpacing(new java.awt.Dimension(0, 0));
+        tblEstoque.setOpaque(false);
+        tblEstoque.setRowHeight(20);
+        tblEstoque.setSelectionBackground(new java.awt.Color(102, 204, 255));
+        tblEstoque.getTableHeader().setReorderingAllowed(false);
+        tblEstoque.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblEstoqueMouseClicked(evt);
+            }
+        });
+        scrollEstoque.setViewportView(tblEstoque);
+
+        javax.swing.GroupLayout pnlEstoqueLayout = new javax.swing.GroupLayout(pnlEstoque);
+        pnlEstoque.setLayout(pnlEstoqueLayout);
+        pnlEstoqueLayout.setHorizontalGroup(
+            pnlEstoqueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(scrollEstoque, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1082, Short.MAX_VALUE)
+            .addGroup(pnlEstoqueLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblPesquisaEsto)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtPesquisaProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        pnlEstoqueLayout.setVerticalGroup(
+            pnlEstoqueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlEstoqueLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(pnlEstoqueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblPesquisaEsto)
+                    .addComponent(txtPesquisaProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(scrollEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        GridHome.add(pnlEstoque);
+
+        javax.swing.GroupLayout frmHomeLayout = new javax.swing.GroupLayout(frmHome);
+        frmHome.setLayout(frmHomeLayout);
+        frmHomeLayout.setHorizontalGroup(
+            frmHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(MuralHome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(GridHome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        frmHomeLayout.setVerticalGroup(
+            frmHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(frmHomeLayout.createSequentialGroup()
+                .addComponent(MuralHome, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(GridHome, javax.swing.GroupLayout.DEFAULT_SIZE, 704, Short.MAX_VALUE))
+        );
 
         telas.add(frmHome, "card3");
 
         frmCliente.setBackground(new java.awt.Color(255, 255, 255));
 
-        Mural.setkBorderRadius(0);
-        Mural.setkEndColor(new java.awt.Color(0, 204, 204));
-        Mural.setkStartColor(new java.awt.Color(20, 85, 217));
-        Mural.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        MuralCliente.setkBorderRadius(0);
+        MuralCliente.setkEndColor(new java.awt.Color(0, 204, 204));
+        MuralCliente.setkStartColor(new java.awt.Color(20, 85, 217));
+        MuralCliente.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblTitulo.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lblTitulo.setForeground(new java.awt.Color(255, 255, 255));
         lblTitulo.setText("Cadastro de Cliente.....");
-        Mural.add(lblTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 180, 40));
+        MuralCliente.add(lblTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 180, 40));
 
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        Mural.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, 10, 70));
+        MuralCliente.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, 10, 70));
 
         lvlIcon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lvlIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/user_group_100px.png"))); // NOI18N
-        Mural.add(lvlIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 10, -1, 70));
+        MuralCliente.add(lvlIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 10, -1, 70));
 
         GridLayout.setBackground(new java.awt.Color(255, 255, 255));
         GridLayout.setOpaque(false);
@@ -1084,13 +1234,13 @@ public class frmPrincipal extends javax.swing.JFrame {
         frmCliente.setLayout(frmClienteLayout);
         frmClienteLayout.setHorizontalGroup(
             frmClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Mural, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(MuralCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(GridLayout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         frmClienteLayout.setVerticalGroup(
             frmClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(frmClienteLayout.createSequentialGroup()
-                .addComponent(Mural, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(MuralCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(GridLayout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -1103,7 +1253,7 @@ public class frmPrincipal extends javax.swing.JFrame {
         frmFornecedor.setLayout(frmFornecedorLayout);
         frmFornecedorLayout.setHorizontalGroup(
             frmFornecedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 1092, Short.MAX_VALUE)
         );
         frmFornecedorLayout.setVerticalGroup(
             frmFornecedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1118,7 +1268,7 @@ public class frmPrincipal extends javax.swing.JFrame {
         frmProduto.setLayout(frmProdutoLayout);
         frmProdutoLayout.setHorizontalGroup(
             frmProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 1092, Short.MAX_VALUE)
         );
         frmProdutoLayout.setVerticalGroup(
             frmProdutoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1133,7 +1283,7 @@ public class frmPrincipal extends javax.swing.JFrame {
         frmOrcamento.setLayout(frmOrcamentoLayout);
         frmOrcamentoLayout.setHorizontalGroup(
             frmOrcamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 1092, Short.MAX_VALUE)
         );
         frmOrcamentoLayout.setVerticalGroup(
             frmOrcamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1144,7 +1294,7 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         getContentPane().add(telas, java.awt.BorderLayout.CENTER);
 
-        setSize(new java.awt.Dimension(1177, 858));
+        setSize(new java.awt.Dimension(1152, 858));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -1409,6 +1559,10 @@ public class frmPrincipal extends javax.swing.JFrame {
         
     }//GEN-LAST:event_tblClientesMouseClicked
 
+    private void tblEstoqueMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblEstoqueMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tblEstoqueMouseClicked
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -1441,8 +1595,10 @@ public class frmPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel GridHome;
     private javax.swing.JPanel GridLayout;
-    private keeptoo.KGradientPanel Mural;
+    private keeptoo.KGradientPanel MuralCliente;
+    private keeptoo.KGradientPanel MuralHome;
     private keeptoo.KButton bntCadastro;
     private javax.swing.JPanel bntCliente;
     private javax.swing.JPanel bntEsto;
@@ -1471,8 +1627,8 @@ public class frmPrincipal extends javax.swing.JFrame {
     private javax.swing.ButtonGroup grupoSituacao;
     private javax.swing.ButtonGroup grupoTipoCadastro;
     private javax.swing.JLabel iconUser;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
     private javax.swing.JLabel lblBairro;
     private javax.swing.JLabel lblCadastro;
     private javax.swing.JLabel lblCidade;
@@ -1488,6 +1644,8 @@ public class frmPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel lblMin;
     private javax.swing.JLabel lblNome1;
     private javax.swing.JLabel lblOrcamento;
+    private javax.swing.JLabel lblPesquisaCli;
+    private javax.swing.JLabel lblPesquisaEsto;
     private javax.swing.JLabel lblProduto;
     private javax.swing.JLabel lblRua;
     private javax.swing.JLabel lblSair;
@@ -1497,6 +1655,7 @@ public class frmPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel lblSobrenome1;
     private javax.swing.JLabel lblTipoCadastro;
     private javax.swing.JLabel lblTitulo;
+    private javax.swing.JLabel lblTitulo1;
     private javax.swing.JLabel lblTrocaUsuario;
     private javax.swing.JLabel lblUser;
     private javax.swing.JLabel lvlCEP;
@@ -1504,6 +1663,7 @@ public class frmPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel lvlComplemento;
     private javax.swing.JLabel lvlEstado;
     private javax.swing.JLabel lvlIcon;
+    private javax.swing.JLabel lvlIcon1;
     private javax.swing.JLabel lvlNumero;
     private keeptoo.KGradientPanel menu;
     private keeptoo.KGradientPanel menuExpandido;
@@ -1511,7 +1671,9 @@ public class frmPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel minMaxSair;
     private javax.swing.JPanel pnlButtons;
     private javax.swing.JPanel pnlCadastroBasico1;
+    private javax.swing.JPanel pnlClientes;
     private javax.swing.JPanel pnlEndereco;
+    private javax.swing.JPanel pnlEstoque;
     private javax.swing.JRadioButton rbAtivo;
     private javax.swing.JRadioButton rbBloqueado;
     private javax.swing.JRadioButton rbCliente;
@@ -1520,10 +1682,13 @@ public class frmPrincipal extends javax.swing.JFrame {
     private javax.swing.JRadioButton rbInativo;
     private javax.swing.JRadioButton rbMasculino1;
     private javax.swing.JRadioButton rbUsuário;
+    private javax.swing.JScrollPane scrollClientes;
+    private javax.swing.JScrollPane scrollEstoque;
     private javax.swing.JSeparator separadorCadastro;
     private javax.swing.JSeparator separadorEstoque;
     private javax.swing.JSeparator separadorServico;
     public javax.swing.JTable tblClientes;
+    public javax.swing.JTable tblEstoque;
     private javax.swing.JPanel telas;
     private javax.swing.JTextArea txaComplemento;
     private javax.swing.JFormattedTextField txtCPF1;
@@ -1532,6 +1697,8 @@ public class frmPrincipal extends javax.swing.JFrame {
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtNome1;
     private javax.swing.JTextField txtNumero;
+    private javax.swing.JTextField txtPesquisaNome;
+    private javax.swing.JTextField txtPesquisaProduto;
     private javax.swing.JTextField txtRua;
     private javax.swing.JTextField txtSobrenome1;
     private javax.swing.JPanel userLogin;
