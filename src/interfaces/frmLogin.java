@@ -11,7 +11,7 @@ import keeptoo.KGradientPanel;
 public class frmLogin extends javax.swing.JFrame {
 
     public frmLogin() {
-        initComponents();       
+        initComponents();
     }
 
     @SuppressWarnings("unchecked")
@@ -21,22 +21,22 @@ public class frmLogin extends javax.swing.JFrame {
         kGradientPanel1 = new keeptoo.KGradientPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel10 = new javax.swing.JLabel();
-        kButton3 = new keeptoo.KButton();
+        lblLogin = new javax.swing.JLabel();
+        txtLogin = new javax.swing.JTextField();
+        lblSenha = new javax.swing.JLabel();
+        bntEntrar = new keeptoo.KButton();
         psfSenha3 = new javax.swing.JPasswordField();
         jLabel13 = new javax.swing.JLabel();
         bnt_exit = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        txtPalavra = new javax.swing.JTextField();
+        txtCadastrarLogin = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         psfSenha = new javax.swing.JPasswordField();
         psfSenha1 = new javax.swing.JPasswordField();
         jLabel8 = new javax.swing.JLabel();
-        kButton2 = new keeptoo.KButton();
+        bntCadastrar = new keeptoo.KButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setUndecorated(true);
@@ -59,35 +59,35 @@ public class frmLogin extends javax.swing.JFrame {
         jLabel4.setText("LOGIN");
         jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(77, 58, -1, -1));
 
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel7.setText("Nome");
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(77, 142, -1, -1));
+        lblLogin.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        lblLogin.setForeground(new java.awt.Color(153, 153, 153));
+        lblLogin.setText("Nome");
+        jPanel2.add(lblLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(77, 142, -1, -1));
 
-        jTextField1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(153, 153, 153));
-        jTextField1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(7, 162, 208)));
-        jPanel2.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(77, 170, 334, 30));
+        txtLogin.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtLogin.setForeground(new java.awt.Color(153, 153, 153));
+        txtLogin.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(7, 162, 208)));
+        jPanel2.add(txtLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(77, 170, 334, 30));
 
-        jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel10.setText("Senha");
-        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(77, 222, -1, -1));
+        lblSenha.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        lblSenha.setForeground(new java.awt.Color(153, 153, 153));
+        lblSenha.setText("Senha");
+        jPanel2.add(lblSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(77, 222, -1, -1));
 
-        kButton3.setBorder(null);
-        kButton3.setText("Entrar");
-        kButton3.setFont(new java.awt.Font("Segoe UI Light", 1, 14)); // NOI18N
-        kButton3.setkBorderRadius(0);
-        kButton3.setkEndColor(new java.awt.Color(20, 85, 217));
-        kButton3.setkHoverEndColor(new java.awt.Color(7, 162, 208));
-        kButton3.setkHoverForeGround(new java.awt.Color(255, 255, 255));
-        kButton3.setkHoverStartColor(new java.awt.Color(0, 204, 204));
-        kButton3.addActionListener(new java.awt.event.ActionListener() {
+        bntEntrar.setBorder(null);
+        bntEntrar.setText("Entrar");
+        bntEntrar.setFont(new java.awt.Font("Segoe UI Light", 1, 14)); // NOI18N
+        bntEntrar.setkBorderRadius(0);
+        bntEntrar.setkEndColor(new java.awt.Color(20, 85, 217));
+        bntEntrar.setkHoverEndColor(new java.awt.Color(7, 162, 208));
+        bntEntrar.setkHoverForeGround(new java.awt.Color(255, 255, 255));
+        bntEntrar.setkHoverStartColor(new java.awt.Color(0, 204, 204));
+        bntEntrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                kButton3ActionPerformed(evt);
+                bntEntrarActionPerformed(evt);
             }
         });
-        jPanel2.add(kButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(77, 326, 334, -1));
+        jPanel2.add(bntEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(77, 326, 334, -1));
 
         psfSenha3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         psfSenha3.setForeground(new java.awt.Color(153, 153, 153));
@@ -120,12 +120,12 @@ public class frmLogin extends javax.swing.JFrame {
         jLabel1.setText("Nome");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, -1, -1));
 
-        txtPalavra.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        txtPalavra.setForeground(new java.awt.Color(255, 255, 255));
-        txtPalavra.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(255, 255, 255)));
-        txtPalavra.setCaretColor(new java.awt.Color(255, 153, 0));
-        txtPalavra.setOpaque(false);
-        jPanel1.add(txtPalavra, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 320, 30));
+        txtCadastrarLogin.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        txtCadastrarLogin.setForeground(new java.awt.Color(255, 255, 255));
+        txtCadastrarLogin.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(255, 255, 255)));
+        txtCadastrarLogin.setCaretColor(new java.awt.Color(255, 153, 0));
+        txtCadastrarLogin.setOpaque(false);
+        jPanel1.add(txtCadastrarLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 320, 30));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -157,20 +157,20 @@ public class frmLogin extends javax.swing.JFrame {
         jLabel8.setText("Registrar Usuário");
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 20, -1, -1));
 
-        kButton2.setBorder(null);
-        kButton2.setText("Cadastrar");
-        kButton2.setFont(new java.awt.Font("Segoe UI Light", 1, 14)); // NOI18N
-        kButton2.setkBorderRadius(40);
-        kButton2.setkEndColor(new java.awt.Color(20, 85, 217));
-        kButton2.setkHoverEndColor(new java.awt.Color(7, 162, 208));
-        kButton2.setkHoverForeGround(new java.awt.Color(255, 255, 255));
-        kButton2.setkHoverStartColor(new java.awt.Color(7, 162, 208));
-        kButton2.addActionListener(new java.awt.event.ActionListener() {
+        bntCadastrar.setBorder(null);
+        bntCadastrar.setText("Cadastrar");
+        bntCadastrar.setFont(new java.awt.Font("Segoe UI Light", 1, 14)); // NOI18N
+        bntCadastrar.setkBorderRadius(40);
+        bntCadastrar.setkEndColor(new java.awt.Color(20, 85, 217));
+        bntCadastrar.setkHoverEndColor(new java.awt.Color(7, 162, 208));
+        bntCadastrar.setkHoverForeGround(new java.awt.Color(255, 255, 255));
+        bntCadastrar.setkHoverStartColor(new java.awt.Color(7, 162, 208));
+        bntCadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                kButton2ActionPerformed(evt);
+                bntCadastrarActionPerformed(evt);
             }
         });
-        jPanel1.add(kButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 440, 150, 40));
+        jPanel1.add(bntCadastrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 440, 150, 40));
 
         kGradientPanel1.add(jPanel1);
         jPanel1.setBounds(130, 110, 400, 570);
@@ -181,11 +181,11 @@ public class frmLogin extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void kButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton3ActionPerformed
+    private void bntEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntEntrarActionPerformed
         frmPrincipal principal = new frmPrincipal();
         principal.setVisible(true);
         dispose();
-    }//GEN-LAST:event_kButton3ActionPerformed
+    }//GEN-LAST:event_bntEntrarActionPerformed
 
     public JLabel getBnt_exit() {
         return bnt_exit;
@@ -204,11 +204,11 @@ public class frmLogin extends javax.swing.JFrame {
     }
 
     public JLabel getjLabel10() {
-        return jLabel10;
+        return lblSenha;
     }
 
     public void setjLabel10(JLabel jLabel10) {
-        this.jLabel10 = jLabel10;
+        this.lblSenha = jLabel10;
     }
 
     public JLabel getjLabel13() {
@@ -244,11 +244,11 @@ public class frmLogin extends javax.swing.JFrame {
     }
 
     public JLabel getjLabel7() {
-        return jLabel7;
+        return lblLogin;
     }
 
     public void setjLabel7(JLabel jLabel7) {
-        this.jLabel7 = jLabel7;
+        this.lblLogin = jLabel7;
     }
 
     public JLabel getjLabel8() {
@@ -276,27 +276,27 @@ public class frmLogin extends javax.swing.JFrame {
     }
 
     public JTextField getjTextField1() {
-        return jTextField1;
+        return txtLogin;
     }
 
     public void setjTextField1(JTextField jTextField1) {
-        this.jTextField1 = jTextField1;
+        this.txtLogin = jTextField1;
     }
 
     public KButton getkButton2() {
-        return kButton2;
+        return bntCadastrar;
     }
 
     public void setkButton2(KButton kButton2) {
-        this.kButton2 = kButton2;
+        this.bntCadastrar = kButton2;
     }
 
     public KButton getkButton3() {
-        return kButton3;
+        return bntEntrar;
     }
 
     public void setkButton3(KButton kButton3) {
-        this.kButton3 = kButton3;
+        this.bntEntrar = kButton3;
     }
 
     public KGradientPanel getkGradientPanel1() {
@@ -332,20 +332,20 @@ public class frmLogin extends javax.swing.JFrame {
     }
 
     public JTextField getTxtPalavra() {
-        return txtPalavra;
+        return txtCadastrarLogin;
     }
 
     public void setTxtPalavra(JTextField txtPalavra) {
-        this.txtPalavra = txtPalavra;
+        this.txtCadastrarLogin = txtPalavra;
     }
 
     private void bnt_exitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bnt_exitMouseClicked
         System.exit(0);
     }//GEN-LAST:event_bnt_exitMouseClicked
 
-    private void kButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton2ActionPerformed
+    private void bntCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntCadastrarActionPerformed
  
-    }//GEN-LAST:event_kButton2ActionPerformed
+    }//GEN-LAST:event_bntCadastrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -384,24 +384,24 @@ public class frmLogin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private keeptoo.KButton bntCadastrar;
+    private keeptoo.KButton bntEntrar;
     private javax.swing.JLabel bnt_exit;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTextField1;
-    private keeptoo.KButton kButton2;
-    private keeptoo.KButton kButton3;
     private keeptoo.KGradientPanel kGradientPanel1;
+    private javax.swing.JLabel lblLogin;
+    private javax.swing.JLabel lblSenha;
     public javax.swing.JPasswordField psfSenha;
     public javax.swing.JPasswordField psfSenha1;
     public javax.swing.JPasswordField psfSenha3;
-    public javax.swing.JTextField txtPalavra;
+    public javax.swing.JTextField txtCadastrarLogin;
+    public javax.swing.JTextField txtLogin;
     // End of variables declaration//GEN-END:variables
 }
