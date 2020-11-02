@@ -82,6 +82,9 @@ public class frmLogin extends javax.swing.JFrame {
         bntEntrar.setkHoverEndColor(new java.awt.Color(7, 162, 208));
         bntEntrar.setkHoverForeGround(new java.awt.Color(255, 255, 255));
         bntEntrar.setkHoverStartColor(new java.awt.Color(0, 204, 204));
+        bntEntrar.setkIndicatorColor(new java.awt.Color(0, 204, 204));
+        bntEntrar.setkPressedColor(new java.awt.Color(0, 204, 204));
+        bntEntrar.setkSelectedColor(new java.awt.Color(0, 204, 204));
         bntEntrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bntEntrarActionPerformed(evt);
@@ -165,6 +168,9 @@ public class frmLogin extends javax.swing.JFrame {
         bntCadastrar.setkHoverEndColor(new java.awt.Color(7, 162, 208));
         bntCadastrar.setkHoverForeGround(new java.awt.Color(255, 255, 255));
         bntCadastrar.setkHoverStartColor(new java.awt.Color(7, 162, 208));
+        bntCadastrar.setkPressedColor(new java.awt.Color(7, 162, 208));
+        bntCadastrar.setkSelectedColor(new java.awt.Color(7, 162, 208));
+        bntCadastrar.setkStartColor(new java.awt.Color(7, 162, 208));
         bntCadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bntCadastrarActionPerformed(evt);
