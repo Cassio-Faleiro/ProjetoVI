@@ -215,20 +215,20 @@ public class frmPrincipal extends javax.swing.JFrame {
         txtPesquisaOrc = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         lblIconPesquisaOrc = new javax.swing.JLabel();
-        pnlSeparador2 = new javax.swing.JPanel();
-        lblCli = new javax.swing.JLabel();
-        cbCli = new javax.swing.JComboBox<>();
-        lblCategoria2 = new javax.swing.JLabel();
-        txtCategoria2 = new javax.swing.JTextField();
-        txtUnidade2 = new javax.swing.JTextField();
-        lblUnidade2 = new javax.swing.JLabel();
-        txtEmail5 = new javax.swing.JTextField();
-        lblQtdMed2 = new javax.swing.JLabel();
-        lblValor2 = new javax.swing.JLabel();
-        txtValor2 = new javax.swing.JTextField();
-        bntCadastraOrc = new keeptoo.KButton();
         pnlPrint = new javax.swing.JPanel();
         lvlPrint = new javax.swing.JLabel();
+        pnlSeparador2 = new javax.swing.JPanel();
+        lvlTituloOrc = new javax.swing.JLabel();
+        lblCli = new javax.swing.JLabel();
+        cbCli1 = new javax.swing.JComboBox<>();
+        lvlSelProd1 = new javax.swing.JLabel();
+        cbProd = new javax.swing.JComboBox<>();
+        bntAddProduto = new keeptoo.KButton();
+        scrollCadastraOrc = new javax.swing.JScrollPane();
+        tblCadastraOrc = new javax.swing.JTable();
+        lblTotalCompra = new javax.swing.JLabel();
+        txtTotalCompra = new javax.swing.JTextField();
+        bntCadastraOrc = new keeptoo.KButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 0, 0));
@@ -696,7 +696,7 @@ public class frmPrincipal extends javax.swing.JFrame {
                 .addComponent(separadorEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, 7, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
                 .addComponent(bntEsto, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(234, Short.MAX_VALUE))
         );
 
         menu.add(menuExpandido, java.awt.BorderLayout.CENTER);
@@ -810,7 +810,7 @@ public class frmPrincipal extends javax.swing.JFrame {
         pnlClientesLayout.setVerticalGroup(
             pnlClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlClientesLayout.createSequentialGroup()
-                .addContainerGap(25, Short.MAX_VALUE)
+                .addContainerGap(26, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnlClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -889,7 +889,7 @@ public class frmPrincipal extends javax.swing.JFrame {
         pnlProdutosLayout.setVerticalGroup(
             pnlProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlProdutosLayout.createSequentialGroup()
-                .addContainerGap(25, Short.MAX_VALUE)
+                .addContainerGap(26, Short.MAX_VALUE)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnlProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1992,11 +1992,11 @@ public class frmPrincipal extends javax.swing.JFrame {
 
             },
             new String [] {
-                "NR", "NOME", "SOBRENOME", "VALOR TOTAL", "DATA"
+                "NR", "CLIENTE", "VALOR TOTAL", "DATA"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, true
+                false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -2026,107 +2026,10 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel3.setText("Pesquisar por cliente");
+        jLabel3.setText("Pesquisar orçamentos");
 
         lblIconPesquisaOrc.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblIconPesquisaOrc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/search_20px.png"))); // NOI18N
-
-        javax.swing.GroupLayout pnlOrcLayout = new javax.swing.GroupLayout(pnlOrc);
-        pnlOrc.setLayout(pnlOrcLayout);
-        pnlOrcLayout.setHorizontalGroup(
-            pnlOrcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(scrollOrc, javax.swing.GroupLayout.DEFAULT_SIZE, 1092, Short.MAX_VALUE)
-            .addGroup(pnlOrcLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(pnlOrcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlOrcLayout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(jLabel3))
-                    .addGroup(pnlOrcLayout.createSequentialGroup()
-                        .addComponent(lblIconPesquisaOrc)
-                        .addGap(10, 10, 10)
-                        .addComponent(txtPesquisaOrc, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        pnlOrcLayout.setVerticalGroup(
-            pnlOrcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlOrcLayout.createSequentialGroup()
-                .addGap(0, 23, Short.MAX_VALUE)
-                .addComponent(jLabel3)
-                .addGap(4, 4, 4)
-                .addGroup(pnlOrcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblIconPesquisaOrc)
-                    .addComponent(txtPesquisaOrc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(scrollOrc, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-
-        GridOrc.add(pnlOrc);
-
-        pnlSeparador2.setBackground(new java.awt.Color(255, 255, 255));
-        pnlSeparador2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        lblCli.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        lblCli.setForeground(new java.awt.Color(102, 102, 102));
-        lblCli.setText("Cliente");
-        pnlSeparador2.add(lblCli, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 30, 100, -1));
-
-        cbCli.setBackground(new java.awt.Color(255, 255, 255));
-        cbCli.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        cbCli.setForeground(new java.awt.Color(153, 153, 153));
-        cbCli.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecionar...", "Cliente1", "Cliente2", "Cliente3" }));
-        pnlSeparador2.add(cbCli, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 60, 218, -1));
-
-        lblCategoria2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        lblCategoria2.setForeground(new java.awt.Color(102, 102, 102));
-        lblCategoria2.setText("Categoria");
-        pnlSeparador2.add(lblCategoria2, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 30, 63, -1));
-
-        txtCategoria2.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        txtCategoria2.setForeground(new java.awt.Color(102, 102, 102));
-        txtCategoria2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(51, 204, 255)));
-        pnlSeparador2.add(txtCategoria2, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 50, 211, 20));
-
-        txtUnidade2.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        txtUnidade2.setForeground(new java.awt.Color(102, 102, 102));
-        txtUnidade2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(51, 204, 255)));
-        pnlSeparador2.add(txtUnidade2, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 130, 211, 20));
-
-        lblUnidade2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        lblUnidade2.setForeground(new java.awt.Color(102, 102, 102));
-        lblUnidade2.setText("Unidade");
-        pnlSeparador2.add(lblUnidade2, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 110, 74, -1));
-
-        txtEmail5.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        txtEmail5.setForeground(new java.awt.Color(102, 102, 102));
-        txtEmail5.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(51, 204, 255)));
-        pnlSeparador2.add(txtEmail5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 130, 218, 20));
-
-        lblQtdMed2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        lblQtdMed2.setForeground(new java.awt.Color(102, 102, 102));
-        lblQtdMed2.setText("Quantidade em Medida");
-        pnlSeparador2.add(lblQtdMed2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, -1, -1));
-
-        lblValor2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        lblValor2.setForeground(new java.awt.Color(102, 102, 102));
-        lblValor2.setText("Valor");
-        pnlSeparador2.add(lblValor2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 170, 100, -1));
-
-        txtValor2.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        txtValor2.setForeground(new java.awt.Color(102, 102, 102));
-        txtValor2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(51, 204, 255)));
-        pnlSeparador2.add(txtValor2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 190, 218, 20));
-
-        bntCadastraOrc.setBorder(null);
-        bntCadastraOrc.setText("Cadastrar");
-        bntCadastraOrc.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        bntCadastraOrc.setkBackGroundColor(new java.awt.Color(91, 98, 218));
-        bntCadastraOrc.setkEndColor(new java.awt.Color(18, 44, 83));
-        bntCadastraOrc.setkHoverEndColor(new java.awt.Color(22, 54, 95));
-        bntCadastraOrc.setkHoverForeGround(new java.awt.Color(255, 255, 255));
-        bntCadastraOrc.setkHoverStartColor(new java.awt.Color(22, 54, 95));
-        bntCadastraOrc.setkStartColor(new java.awt.Color(91, 98, 218));
-        pnlSeparador2.add(bntCadastraOrc, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 250, 157, 37));
 
         pnlPrint.setBackground(new java.awt.Color(255, 255, 255));
         pnlPrint.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(22, 54, 95)));
@@ -2138,14 +2041,189 @@ public class frmPrincipal extends javax.swing.JFrame {
         pnlPrint.setLayout(pnlPrintLayout);
         pnlPrintLayout.setHorizontalGroup(
             pnlPrintLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lvlPrint, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPrintLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(lvlPrint, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         pnlPrintLayout.setVerticalGroup(
             pnlPrintLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lvlPrint, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPrintLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(lvlPrint, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        pnlSeparador2.add(pnlPrint, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 240, 60, -1));
+        javax.swing.GroupLayout pnlOrcLayout = new javax.swing.GroupLayout(pnlOrc);
+        pnlOrc.setLayout(pnlOrcLayout);
+        pnlOrcLayout.setHorizontalGroup(
+            pnlOrcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(scrollOrc, javax.swing.GroupLayout.DEFAULT_SIZE, 1092, Short.MAX_VALUE)
+            .addGroup(pnlOrcLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnlOrcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnlOrcLayout.createSequentialGroup()
+                        .addComponent(lblIconPesquisaOrc)
+                        .addGap(10, 10, 10)
+                        .addComponent(txtPesquisaOrc, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(pnlPrint, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        pnlOrcLayout.setVerticalGroup(
+            pnlOrcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlOrcLayout.createSequentialGroup()
+                .addGap(0, 22, Short.MAX_VALUE)
+                .addGroup(pnlOrcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlOrcLayout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addGap(4, 4, 4)
+                        .addGroup(pnlOrcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblIconPesquisaOrc)
+                            .addComponent(txtPesquisaOrc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(pnlPrint, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(scrollOrc, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        GridOrc.add(pnlOrc);
+
+        pnlSeparador2.setBackground(new java.awt.Color(255, 255, 255));
+
+        lvlTituloOrc.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lvlTituloOrc.setForeground(new java.awt.Color(102, 102, 102));
+        lvlTituloOrc.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lvlTituloOrc.setText("Cadastrar Novo Orçamento");
+
+        lblCli.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblCli.setForeground(new java.awt.Color(102, 102, 102));
+        lblCli.setText("Cliente");
+
+        cbCli1.setBackground(new java.awt.Color(255, 255, 255));
+        cbCli1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        cbCli1.setForeground(new java.awt.Color(153, 153, 153));
+        cbCli1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecionar...", "Cliente1", "Cliente2", "Cliente3" }));
+
+        lvlSelProd1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lvlSelProd1.setForeground(new java.awt.Color(102, 102, 102));
+        lvlSelProd1.setText("Produto");
+
+        cbProd.setBackground(new java.awt.Color(255, 255, 255));
+        cbProd.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        cbProd.setForeground(new java.awt.Color(153, 153, 153));
+        cbProd.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecionar...", "Produto1", "Produto2", "Produto3" }));
+
+        bntAddProduto.setBorder(null);
+        bntAddProduto.setText("Adicionar");
+        bntAddProduto.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        bntAddProduto.setkBackGroundColor(new java.awt.Color(91, 98, 218));
+        bntAddProduto.setkEndColor(new java.awt.Color(18, 44, 83));
+        bntAddProduto.setkHoverEndColor(new java.awt.Color(22, 54, 95));
+        bntAddProduto.setkHoverForeGround(new java.awt.Color(255, 255, 255));
+        bntAddProduto.setkHoverStartColor(new java.awt.Color(22, 54, 95));
+        bntAddProduto.setkPressedColor(new java.awt.Color(91, 98, 218));
+        bntAddProduto.setkSelectedColor(new java.awt.Color(91, 98, 218));
+        bntAddProduto.setkStartColor(new java.awt.Color(91, 98, 218));
+
+        scrollCadastraOrc.setBorder(null);
+
+        tblCadastraOrc.setBackground(new java.awt.Color(255, 255, 255));
+        tblCadastraOrc.setForeground(new java.awt.Color(255, 255, 255));
+        tblCadastraOrc.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "NÚMERO", "PRODUTO", "QUANTIDADE", "VALOR"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, true, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tblCadastraOrc.getTableHeader().setReorderingAllowed(false);
+        scrollCadastraOrc.setViewportView(tblCadastraOrc);
+
+        lblTotalCompra.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblTotalCompra.setForeground(new java.awt.Color(102, 102, 102));
+        lblTotalCompra.setText("Total da Compra");
+
+        txtTotalCompra.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        txtTotalCompra.setForeground(new java.awt.Color(51, 255, 51));
+
+        bntCadastraOrc.setBorder(null);
+        bntCadastraOrc.setText("Cadastrar");
+        bntCadastraOrc.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        bntCadastraOrc.setkBackGroundColor(new java.awt.Color(91, 98, 218));
+        bntCadastraOrc.setkEndColor(new java.awt.Color(18, 44, 83));
+        bntCadastraOrc.setkHoverEndColor(new java.awt.Color(22, 54, 95));
+        bntCadastraOrc.setkHoverForeGround(new java.awt.Color(255, 255, 255));
+        bntCadastraOrc.setkHoverStartColor(new java.awt.Color(22, 54, 95));
+        bntCadastraOrc.setkPressedColor(new java.awt.Color(91, 98, 218));
+        bntCadastraOrc.setkSelectedColor(new java.awt.Color(91, 98, 218));
+        bntCadastraOrc.setkStartColor(new java.awt.Color(91, 98, 218));
+
+        javax.swing.GroupLayout pnlSeparador2Layout = new javax.swing.GroupLayout(pnlSeparador2);
+        pnlSeparador2.setLayout(pnlSeparador2Layout);
+        pnlSeparador2Layout.setHorizontalGroup(
+            pnlSeparador2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlSeparador2Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(pnlSeparador2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlSeparador2Layout.createSequentialGroup()
+                        .addComponent(lblCli, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(140, 140, 140)
+                        .addComponent(lvlSelProd1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlSeparador2Layout.createSequentialGroup()
+                        .addComponent(cbCli1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(70, 70, 70)
+                        .addComponent(cbProd, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(45, 45, 45)
+                        .addComponent(bntAddProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(pnlSeparador2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblTotalCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtTotalCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(2, 2, 2))
+            .addComponent(scrollCadastraOrc)
+            .addGroup(pnlSeparador2Layout.createSequentialGroup()
+                .addGap(550, 550, 550)
+                .addComponent(lvlTituloOrc, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(234, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlSeparador2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(bntCadastraOrc, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        pnlSeparador2Layout.setVerticalGroup(
+            pnlSeparador2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlSeparador2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lvlTituloOrc)
+                .addGap(34, 34, 34)
+                .addGroup(pnlSeparador2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(pnlSeparador2Layout.createSequentialGroup()
+                        .addGroup(pnlSeparador2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblCli)
+                            .addComponent(lvlSelProd1))
+                        .addGap(14, 14, 14)
+                        .addGroup(pnlSeparador2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(cbCli1)
+                            .addComponent(cbProd)
+                            .addComponent(bntAddProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
+                    .addGroup(pnlSeparador2Layout.createSequentialGroup()
+                        .addComponent(lblTotalCompra)
+                        .addGap(8, 8, 8)
+                        .addComponent(txtTotalCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(10, 10, 10)
+                .addComponent(scrollCadastraOrc, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(bntCadastraOrc, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(7, 7, 7))
+        );
 
         GridOrc.add(pnlSeparador2);
 
@@ -2161,10 +2239,10 @@ public class frmPrincipal extends javax.swing.JFrame {
             frmOrcamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(frmOrcamentoLayout.createSequentialGroup()
                 .addComponent(MuralOrc, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(718, Short.MAX_VALUE))
+                .addContainerGap(720, Short.MAX_VALUE))
             .addGroup(frmOrcamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, frmOrcamentoLayout.createSequentialGroup()
-                    .addGap(0, 93, Short.MAX_VALUE)
+                    .addGap(0, 95, Short.MAX_VALUE)
                     .addComponent(GridOrc, javax.swing.GroupLayout.PREFERRED_SIZE, 715, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
@@ -2172,7 +2250,7 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         getContentPane().add(telas, java.awt.BorderLayout.CENTER);
 
-        setSize(new java.awt.Dimension(1152, 858));
+        setSize(new java.awt.Dimension(1152, 860));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -2500,6 +2578,7 @@ public class frmPrincipal extends javax.swing.JFrame {
     private keeptoo.KGradientPanel MuralFornecedor;
     private keeptoo.KGradientPanel MuralHome;
     private keeptoo.KGradientPanel MuralOrc;
+    private keeptoo.KButton bntAddProduto;
     private keeptoo.KButton bntCadastraOrc;
     private keeptoo.KButton bntCadastraProd;
     private keeptoo.KButton bntCadastro;
@@ -2521,9 +2600,10 @@ public class frmPrincipal extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cbBairro1;
     private javax.swing.JComboBox<String> cbCidade;
     private javax.swing.JComboBox<String> cbCidade1;
-    private javax.swing.JComboBox<String> cbCli;
+    private javax.swing.JComboBox<String> cbCli1;
     private javax.swing.JComboBox<String> cbEstado;
     private javax.swing.JComboBox<String> cbEstado1;
+    private javax.swing.JComboBox<String> cbProd;
     private javax.swing.JCheckBox cbxPessoaFisica;
     private javax.swing.JCheckBox cbxPessoaJuridica;
     private javax.swing.JPanel detalhe1;
@@ -2552,7 +2632,6 @@ public class frmPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel lblBairro1;
     private javax.swing.JLabel lblCadastro;
     private javax.swing.JLabel lblCategoria;
-    private javax.swing.JLabel lblCategoria2;
     private javax.swing.JLabel lblCidade;
     private javax.swing.JLabel lblCidade1;
     private javax.swing.JLabel lblCli;
@@ -2580,7 +2659,6 @@ public class frmPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel lblProd;
     private javax.swing.JLabel lblProduto;
     private javax.swing.JLabel lblQtdMed;
-    private javax.swing.JLabel lblQtdMed2;
     private javax.swing.JLabel lblRua;
     private javax.swing.JLabel lblRua1;
     private javax.swing.JLabel lblSair;
@@ -2596,12 +2674,11 @@ public class frmPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel lblTitulo2;
     private javax.swing.JLabel lblTitulo3;
     private javax.swing.JLabel lblTitulo5;
+    private javax.swing.JLabel lblTotalCompra;
     private javax.swing.JLabel lblTrocaUsuario;
     private javax.swing.JLabel lblUnidade;
-    private javax.swing.JLabel lblUnidade2;
     private javax.swing.JLabel lblUser;
     private javax.swing.JLabel lblValor;
-    private javax.swing.JLabel lblValor2;
     private javax.swing.JLabel lvlCEP;
     private javax.swing.JLabel lvlCEP1;
     private javax.swing.JLabel lvlCNPJ;
@@ -2616,6 +2693,8 @@ public class frmPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel lvlNumero;
     private javax.swing.JLabel lvlNumero1;
     private javax.swing.JLabel lvlPrint;
+    private javax.swing.JLabel lvlSelProd1;
+    private javax.swing.JLabel lvlTituloOrc;
     private keeptoo.KGradientPanel menu;
     private keeptoo.KGradientPanel menuExpandido;
     private keeptoo.KGradientPanel menuIcones;
@@ -2647,12 +2726,14 @@ public class frmPrincipal extends javax.swing.JFrame {
     private javax.swing.JRadioButton rbMasculino1;
     private javax.swing.JRadioButton rbUsuário;
     private javax.swing.JRadioButton rbUsuário1;
+    private javax.swing.JScrollPane scrollCadastraOrc;
     private javax.swing.JScrollPane scrollClientes;
     private javax.swing.JScrollPane scrollEstoque;
     private javax.swing.JScrollPane scrollOrc;
     private javax.swing.JSeparator separadorCadastro;
     private javax.swing.JSeparator separadorEstoque;
     private javax.swing.JSeparator separadorServico;
+    private javax.swing.JTable tblCadastraOrc;
     public javax.swing.JTable tblClientes;
     public javax.swing.JTable tblEstoque;
     public javax.swing.JTable tblOrc;
@@ -2665,13 +2746,11 @@ public class frmPrincipal extends javax.swing.JFrame {
     private javax.swing.JFormattedTextField txtCNPJ1;
     private javax.swing.JFormattedTextField txtCPF1;
     private javax.swing.JTextField txtCategoria;
-    private javax.swing.JTextField txtCategoria2;
     private javax.swing.JFormattedTextField txtContato;
     private javax.swing.JFormattedTextField txtContato1;
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtEmail1;
     private javax.swing.JTextField txtEmail3;
-    private javax.swing.JTextField txtEmail5;
     private javax.swing.JTextField txtNome1;
     private javax.swing.JTextField txtNome2;
     private javax.swing.JTextField txtNumero;
@@ -2683,10 +2762,9 @@ public class frmPrincipal extends javax.swing.JFrame {
     private javax.swing.JTextField txtRua;
     private javax.swing.JTextField txtRua1;
     private javax.swing.JTextField txtSobrenome1;
+    private javax.swing.JTextField txtTotalCompra;
     private javax.swing.JTextField txtUnidade;
-    private javax.swing.JTextField txtUnidade2;
     private javax.swing.JTextField txtValor;
-    private javax.swing.JTextField txtValor2;
     private javax.swing.JPanel userLogin;
     // End of variables declaration//GEN-END:variables
 }
