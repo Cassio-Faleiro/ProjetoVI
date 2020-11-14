@@ -1,6 +1,10 @@
 
 package interfaces;
 
+import controller.FormCadastroController;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
@@ -10,8 +14,12 @@ import keeptoo.KGradientPanel;
 
 public class frmLogin extends javax.swing.JFrame {
 
+    private final FormCadastroController controller;
+
     public frmLogin() {
         initComponents();
+        controller = new FormCadastroController(this);
+       
     }
 
     @SuppressWarnings("unchecked")
@@ -67,6 +75,11 @@ public class frmLogin extends javax.swing.JFrame {
         txtLogin.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtLogin.setForeground(new java.awt.Color(153, 153, 153));
         txtLogin.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(7, 162, 208)));
+        txtLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtLoginActionPerformed(evt);
+            }
+        });
         jPanel2.add(txtLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(77, 170, 334, 30));
 
         lblSenha.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
@@ -188,8 +201,12 @@ public class frmLogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bntEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntEntrarActionPerformed
-        frmPrincipal principal = new frmPrincipal();
-        principal.setVisible(true);
+
+        try {
+            controller.autenticar();
+        } catch (SQLException ex) {
+            Logger.getLogger(frmLogin.class.getName()).log(Level.SEVERE, null, ex);
+        }
         dispose();
     }//GEN-LAST:event_bntEntrarActionPerformed
 
@@ -350,8 +367,31 @@ public class frmLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_bnt_exitMouseClicked
 
     private void bntCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntCadastrarActionPerformed
- 
+        controller.salvaUsuario();
+        txtCadastrarLogin.setText("");
+        psfSenha.setText("");
+        psfSenha1.setText("");
     }//GEN-LAST:event_bntCadastrarActionPerformed
+
+    private void txtLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLoginActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtLoginActionPerformed
+
+    public JTextField getTxtCadastrarLogin() {
+        return txtCadastrarLogin;
+    }
+
+    public void setTxtCadastrarLogin(JTextField txtCadastrarLogin) {
+        this.txtCadastrarLogin = txtCadastrarLogin;
+    }
+
+    public JTextField getTxtLogin() {
+        return txtLogin;
+    }
+
+    public void setTxtLogin(JTextField txtLogin) {
+        this.txtLogin = txtLogin;
+    }
 
     /**
      * @param args the command line arguments
