@@ -201,13 +201,11 @@ public class frmLogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bntEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntEntrarActionPerformed
-
         try {
             controller.autenticar();
         } catch (SQLException ex) {
             Logger.getLogger(frmLogin.class.getName()).log(Level.SEVERE, null, ex);
         }
-        dispose();
     }//GEN-LAST:event_bntEntrarActionPerformed
 
     public JLabel getBnt_exit() {
@@ -392,10 +390,7 @@ public class frmLogin extends javax.swing.JFrame {
     public void setTxtLogin(JTextField txtLogin) {
         this.txtLogin = txtLogin;
     }
-
-    /**
-     * @param args the command line arguments
-     */
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
