@@ -979,8 +979,8 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
                 <Property name="columns" type="int" value="0"/>
-                <Property name="rows" type="int" value="2"/>
                 <Property name="verticalGap" type="int" value="10"/>
+                <Property name="rows" type="int" value="2"/>
               </Layout>
               <SubComponents>
                 <Container class="javax.swing.JPanel" name="pnlClientes">
@@ -1000,7 +1000,7 @@
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="scrollClientes" alignment="0" pref="1090" max="32767" attributes="0"/>
+                          <Component id="scrollClientes" alignment="0" pref="1123" max="32767" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="lblPesquisaCli" min="-2" max="-2" attributes="0"/>
@@ -1016,7 +1016,7 @@
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace pref="26" max="32767" attributes="0"/>
+                              <EmptySpace pref="215" max="32767" attributes="0"/>
                               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -1178,7 +1178,7 @@
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="scrollEstoque" alignment="1" pref="1090" max="32767" attributes="0"/>
+                          <Component id="scrollEstoque" alignment="1" pref="1123" max="32767" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="lblPesquisaEsto" min="-2" max="-2" attributes="0"/>
@@ -1194,7 +1194,7 @@
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace pref="26" max="32767" attributes="0"/>
+                              <EmptySpace pref="215" max="32767" attributes="0"/>
                               <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -1437,8 +1437,8 @@
               <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
                 <Property name="columns" type="int" value="2"/>
                 <Property name="horizontalGap" type="int" value="5"/>
-                <Property name="rows" type="int" value="2"/>
                 <Property name="verticalGap" type="int" value="5"/>
+                <Property name="rows" type="int" value="2"/>
               </Layout>
               <SubComponents>
                 <Container class="javax.swing.JPanel" name="pnlCadastroBasico1">
@@ -1691,6 +1691,7 @@
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="66" green="66" red="66" type="rgb"/>
                         </Property>
+                        <Property name="selected" type="boolean" value="true"/>
                         <Property name="text" type="java.lang.String" value="Feminino"/>
                       </Properties>
                     </Component>
@@ -1823,6 +1824,7 @@
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="66" green="66" red="66" type="rgb"/>
                         </Property>
+                        <Property name="selected" type="boolean" value="true"/>
                         <Property name="text" type="java.lang.String" value="Cliente"/>
                       </Properties>
                     </Component>
@@ -1885,6 +1887,7 @@
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="66" green="66" red="66" type="rgb"/>
                         </Property>
+                        <Property name="selected" type="boolean" value="true"/>
                         <Property name="text" type="java.lang.String" value="Ativo"/>
                       </Properties>
                     </Component>
@@ -2384,6 +2387,9 @@
                           <Color blue="da" green="62" red="5b" type="rgb"/>
                         </Property>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bntCadastroActionPerformed"/>
+                      </Events>
                     </Component>
                   </SubComponents>
                 </Container>
@@ -2491,8 +2497,8 @@
               <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
                 <Property name="columns" type="int" value="2"/>
                 <Property name="horizontalGap" type="int" value="5"/>
-                <Property name="rows" type="int" value="2"/>
                 <Property name="verticalGap" type="int" value="5"/>
+                <Property name="rows" type="int" value="2"/>
               </Layout>
               <SubComponents>
                 <Container class="javax.swing.JPanel" name="pnlCadastroBasico2">
@@ -3271,7 +3277,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="MuralEstoque" alignment="0" pref="1092" max="32767" attributes="0"/>
+                  <Component id="MuralEstoque" alignment="0" pref="1125" max="32767" attributes="0"/>
                   <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                       <Component id="GridEstoque" alignment="0" max="32767" attributes="0"/>
                   </Group>
@@ -3281,7 +3287,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="MuralEstoque" min="-2" pref="90" max="-2" attributes="0"/>
-                      <EmptySpace pref="778" max="32767" attributes="0"/>
+                      <EmptySpace pref="1099" max="32767" attributes="0"/>
                   </Group>
                   <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                       <Component id="GridEstoque" alignment="1" max="32767" attributes="0"/>
@@ -3401,7 +3407,7 @@
                                       </Group>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="345" max="32767" attributes="0"/>
+                              <EmptySpace pref="378" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -3679,7 +3685,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="MuralOrc" alignment="0" pref="1092" max="32767" attributes="0"/>
+                  <Component id="MuralOrc" alignment="0" pref="1125" max="32767" attributes="0"/>
                   <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                       <Component id="GridOrc" alignment="0" max="32767" attributes="0"/>
                   </Group>
@@ -3689,11 +3695,11 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="MuralOrc" min="-2" pref="90" max="-2" attributes="0"/>
-                      <EmptySpace pref="720" max="32767" attributes="0"/>
+                      <EmptySpace pref="1099" max="32767" attributes="0"/>
                   </Group>
                   <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace min="0" pref="95" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="474" max="32767" attributes="0"/>
                           <Component id="GridOrc" min="-2" pref="715" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -3794,7 +3800,7 @@
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="scrollOrc" pref="1092" max="32767" attributes="0"/>
+                          <Component id="scrollOrc" pref="1125" max="32767" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
@@ -4037,7 +4043,7 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="550" max="-2" attributes="0"/>
                               <Component id="lvlTituloOrc" min="-2" pref="308" max="-2" attributes="0"/>
-                              <EmptySpace pref="234" max="32767" attributes="0"/>
+                              <EmptySpace pref="267" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace max="32767" attributes="0"/>

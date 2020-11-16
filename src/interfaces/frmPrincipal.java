@@ -1,16 +1,16 @@
 
 package interfaces;
 
+import dao.CadastraPessoa;
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.event.ActionEvent;
-import static java.lang.reflect.Array.set;
-import javax.swing.AbstractAction;
-import javax.swing.Action;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JCheckBox;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JRadioButton;
 import javax.swing.SwingUtilities;
 
 public class frmPrincipal extends javax.swing.JFrame {
@@ -799,7 +799,7 @@ public class frmPrincipal extends javax.swing.JFrame {
         pnlClientes.setLayout(pnlClientesLayout);
         pnlClientesLayout.setHorizontalGroup(
             pnlClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(scrollClientes, javax.swing.GroupLayout.DEFAULT_SIZE, 1090, Short.MAX_VALUE)
+            .addComponent(scrollClientes, javax.swing.GroupLayout.DEFAULT_SIZE, 1123, Short.MAX_VALUE)
             .addGroup(pnlClientesLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lblPesquisaCli)
@@ -812,7 +812,7 @@ public class frmPrincipal extends javax.swing.JFrame {
         pnlClientesLayout.setVerticalGroup(
             pnlClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlClientesLayout.createSequentialGroup()
-                .addContainerGap(26, Short.MAX_VALUE)
+                .addContainerGap(215, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnlClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -878,7 +878,7 @@ public class frmPrincipal extends javax.swing.JFrame {
         pnlProdutos.setLayout(pnlProdutosLayout);
         pnlProdutosLayout.setHorizontalGroup(
             pnlProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(scrollEstoque, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1090, Short.MAX_VALUE)
+            .addComponent(scrollEstoque, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1123, Short.MAX_VALUE)
             .addGroup(pnlProdutosLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lblPesquisaEsto)
@@ -891,7 +891,7 @@ public class frmPrincipal extends javax.swing.JFrame {
         pnlProdutosLayout.setVerticalGroup(
             pnlProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlProdutosLayout.createSequentialGroup()
-                .addContainerGap(26, Short.MAX_VALUE)
+                .addContainerGap(215, Short.MAX_VALUE)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnlProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -976,6 +976,7 @@ public class frmPrincipal extends javax.swing.JFrame {
         grupoSexoMeF.add(rbFeminino);
         rbFeminino.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         rbFeminino.setForeground(new java.awt.Color(102, 102, 102));
+        rbFeminino.setSelected(true);
         rbFeminino.setText("Feminino");
 
         rbMasculino.setBackground(new java.awt.Color(255, 255, 255));
@@ -1021,6 +1022,7 @@ public class frmPrincipal extends javax.swing.JFrame {
         grupoTipoCadastro.add(rbCliente);
         rbCliente.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         rbCliente.setForeground(new java.awt.Color(102, 102, 102));
+        rbCliente.setSelected(true);
         rbCliente.setText("Cliente");
 
         rbFornecedor.setBackground(new java.awt.Color(255, 255, 255));
@@ -1043,6 +1045,7 @@ public class frmPrincipal extends javax.swing.JFrame {
         grupoSituacao.add(rbAtivo);
         rbAtivo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         rbAtivo.setForeground(new java.awt.Color(102, 102, 102));
+        rbAtivo.setSelected(true);
         rbAtivo.setText("Ativo");
 
         rbBloqueado.setBackground(new java.awt.Color(255, 255, 255));
@@ -1369,6 +1372,11 @@ public class frmPrincipal extends javax.swing.JFrame {
         bntCadastro.setkHoverForeGround(new java.awt.Color(255, 255, 255));
         bntCadastro.setkHoverStartColor(new java.awt.Color(22, 54, 95));
         bntCadastro.setkStartColor(new java.awt.Color(91, 98, 218));
+        bntCadastro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bntCadastroActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlButtonsLayout = new javax.swing.GroupLayout(pnlButtons);
         pnlButtons.setLayout(pnlButtonsLayout);
@@ -1905,7 +1913,7 @@ public class frmPrincipal extends javax.swing.JFrame {
                             .addComponent(lblUnidade, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(345, Short.MAX_VALUE))
+                .addContainerGap(378, Short.MAX_VALUE))
         );
         pnlEstoqueLayout.setVerticalGroup(
             pnlEstoqueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1951,7 +1959,7 @@ public class frmPrincipal extends javax.swing.JFrame {
         frmEstoque.setLayout(frmEstoqueLayout);
         frmEstoqueLayout.setHorizontalGroup(
             frmEstoqueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(MuralEstoque, javax.swing.GroupLayout.DEFAULT_SIZE, 1092, Short.MAX_VALUE)
+            .addComponent(MuralEstoque, javax.swing.GroupLayout.DEFAULT_SIZE, 1125, Short.MAX_VALUE)
             .addGroup(frmEstoqueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(GridEstoque, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -1959,7 +1967,7 @@ public class frmPrincipal extends javax.swing.JFrame {
             frmEstoqueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(frmEstoqueLayout.createSequentialGroup()
                 .addComponent(MuralEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(778, Short.MAX_VALUE))
+                .addContainerGap(1099, Short.MAX_VALUE))
             .addGroup(frmEstoqueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(GridEstoque, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -2071,7 +2079,7 @@ public class frmPrincipal extends javax.swing.JFrame {
         pnlOrc.setLayout(pnlOrcLayout);
         pnlOrcLayout.setHorizontalGroup(
             pnlOrcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(scrollOrc, javax.swing.GroupLayout.DEFAULT_SIZE, 1092, Short.MAX_VALUE)
+            .addComponent(scrollOrc, javax.swing.GroupLayout.DEFAULT_SIZE, 1125, Short.MAX_VALUE)
             .addGroup(pnlOrcLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(pnlOrcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -2207,7 +2215,7 @@ public class frmPrincipal extends javax.swing.JFrame {
             .addGroup(pnlSeparador2Layout.createSequentialGroup()
                 .addGap(550, 550, 550)
                 .addComponent(lvlTituloOrc, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(234, Short.MAX_VALUE))
+                .addContainerGap(267, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlSeparador2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(bntCadastraOrc, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2246,7 +2254,7 @@ public class frmPrincipal extends javax.swing.JFrame {
         frmOrcamento.setLayout(frmOrcamentoLayout);
         frmOrcamentoLayout.setHorizontalGroup(
             frmOrcamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(MuralOrc, javax.swing.GroupLayout.DEFAULT_SIZE, 1092, Short.MAX_VALUE)
+            .addComponent(MuralOrc, javax.swing.GroupLayout.DEFAULT_SIZE, 1125, Short.MAX_VALUE)
             .addGroup(frmOrcamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(GridOrc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -2254,10 +2262,10 @@ public class frmPrincipal extends javax.swing.JFrame {
             frmOrcamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(frmOrcamentoLayout.createSequentialGroup()
                 .addComponent(MuralOrc, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(720, Short.MAX_VALUE))
+                .addContainerGap(1099, Short.MAX_VALUE))
             .addGroup(frmOrcamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, frmOrcamentoLayout.createSequentialGroup()
-                    .addGap(0, 95, Short.MAX_VALUE)
+                    .addGap(0, 474, Short.MAX_VALUE)
                     .addComponent(GridOrc, javax.swing.GroupLayout.PREFERRED_SIZE, 715, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
@@ -2322,7 +2330,8 @@ public class frmPrincipal extends javax.swing.JFrame {
             txtSobrenome.setEditable(false);
             txtCPF.setEditable(false);
             rbFeminino.setEnabled(false);
-            rbMasculino.setEnabled(false);
+            rbMasculino.setEnabled(false);            
+            rbUsuário.setEnabled(false);
                       
             //habilitado
             txtCNPJ.setEnabled(true);
@@ -2596,6 +2605,62 @@ public class frmPrincipal extends javax.swing.JFrame {
     private void cbxPessoaJuriMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbxPessoaJuriMouseClicked
         tipoPessoaFisica(cbxPessoaJuri);
     }//GEN-LAST:event_cbxPessoaJuriMouseClicked
+
+    private void bntCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntCadastroActionPerformed
+        CadastraPessoa cadastro = new CadastraPessoa();
+        
+        String rua = txtRua.getText();
+        String numero = txtNumero.getText();
+        String cep = txtCEP.getText();
+        Object bairro = cbBairro.getSelectedItem();
+        Object cidade = cbCidade.getSelectedItem();
+        Object estado = cbEstado.getSelectedItem();
+        String complemento = txaComplemento.getText();
+        
+        if (cbxPessoaJuri.isSelected()){
+            // Cadastra Pessoa Jurídica
+            
+            
+        } else if (cbxPessoaFisica.isSelected()) {
+            // Cadastra Pessoa Física
+            String nome = txtNome.getText();
+            String sobrenome = txtSobrenome.getText();
+            String cpf = txtCPF.getText();
+            String email = txtEmail.getText();
+            char sexo = 'x';
+            String contato = txtContato.getText();
+            int tipoCadastro = 0;
+            char situacao = 'x';
+            
+            if (rbFeminino.isSelected()) {
+                sexo = 'f';
+            } else if (rbMasculino.isSelected()) {
+                sexo = 'm';
+            }
+            
+            if (rbAtivo.isSelected()) {
+                situacao = 'a';
+            } else if (rbBloqueado.isSelected()) {
+                situacao = 'b';
+            } else {
+                situacao = 'i';
+            }
+            
+            if (rbUsuário.isSelected()) {
+                tipoCadastro = 1;
+            } else if (rbFornecedor.isSelected()) {
+                tipoCadastro = 2;
+            } else {
+                tipoCadastro = 3;
+            }
+            
+            try {
+                cadastro.insereFisica(nome, sobrenome, cpf, email, sexo, contato, tipoCadastro, situacao);
+            } catch (SQLException ex) {
+                Logger.getLogger(frmPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }//GEN-LAST:event_bntCadastroActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
