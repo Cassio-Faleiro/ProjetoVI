@@ -9,9 +9,12 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JCheckBox;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
+import model.ComumPessoa;
+import model.Endereco;
+import model.Fisica;
+import model.Juridica;
 
 public class frmPrincipal extends javax.swing.JFrame {
 
@@ -2607,58 +2610,107 @@ public class frmPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_cbxPessoaJuriMouseClicked
 
     private void bntCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntCadastroActionPerformed
+        // CONSTRUTORES
         CadastraPessoa cadastro = new CadastraPessoa();
+        Fisica fisica = new Fisica();
+        Endereco endereco = new Endereco();
+        ComumPessoa comum = new ComumPessoa();
+        Juridica juridica = new Juridica();
         
-        String rua = txtRua.getText();
-        String numero = txtNumero.getText();
-        String cep = txtCEP.getText();
-        Object bairro = cbBairro.getSelectedItem();
-        Object cidade = cbCidade.getSelectedItem();
-        Object estado = cbEstado.getSelectedItem();
-        String complemento = txaComplemento.getText();
+        // Inputs de Endereço
+        endereco.setRua(txtRua.getText());
+        endereco.setNumero(txtNumero.getText());
+        endereco.setCep(txtCEP.getText());
+        endereco.setBairro((String) cbBairro.getSelectedItem());
+        endereco.setCidade((String) cbCidade.getSelectedItem());
+        endereco.setEstado((String) cbEstado.getSelectedItem());
+        endereco.setComplemento(txaComplemento.getText());
+        
+        // Inputs comuns para Jurídica e Física
+        comum.setContato(txtContato.getText());
+        comum.setEmail(txtEmail.getText());
+        
         
         if (cbxPessoaJuri.isSelected()){
-            // Cadastra Pessoa Jurídica
+            // Cadastra Pessoa Juridica
+            juridica.setRazao(txtNome.getText());
+            juridica.setCnpj(txtCNPJ.getText());
+
+            try {
+                cadastro.insereJuridica(
+                        juridica.getRazao(),
+                        juridica.getCnpj(),
+                        comum.getEmail(),
+                        endereco.getNumero(),
+                        endereco.getComplemento(),
+                        comum.getSituacao(),
+                        comum.getContato(),
+                        comum.getTipoCadastro(),                        
+                        endereco.getEstado(),
+                        endereco.getCidade(),
+                        endereco.getBairro(),
+                        endereco.getRua(),
+                        endereco.getCep()                        
+                );
+            } catch (SQLException ex) {
+                Logger.getLogger(frmPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
             
             
         } else if (cbxPessoaFisica.isSelected()) {
             // Cadastra Pessoa Física
-            String nome = txtNome.getText();
-            String sobrenome = txtSobrenome.getText();
-            String cpf = txtCPF.getText();
-            String email = txtEmail.getText();
-            char sexo = 'x';
-            String contato = txtContato.getText();
-            int tipoCadastro = 0;
-            char situacao = 'x';
+            fisica.setNome(txtNome.getText());
+            fisica.setSobrenome(txtSobrenome.getText());
+            fisica.setCpf(txtCPF.getText());
             
+            // Validação de SEXO
             if (rbFeminino.isSelected()) {
-                sexo = 'f';
+                fisica.setSexo('f');
             } else if (rbMasculino.isSelected()) {
-                sexo = 'm';
+                fisica.setSexo('m');
             }
             
+            // Validação de SITUAÇÃO 
             if (rbAtivo.isSelected()) {
-                situacao = 'a';
+                comum.setSituacao('a');
             } else if (rbBloqueado.isSelected()) {
-                situacao = 'b';
+                comum.setSituacao('b');
             } else {
-                situacao = 'i';
+                comum.setSituacao('i');
             }
             
+            // Validação de TIPO DE CADASTRO
             if (rbUsuário.isSelected()) {
-                tipoCadastro = 1;
+                comum.setTipoCadastro(1);
             } else if (rbFornecedor.isSelected()) {
-                tipoCadastro = 2;
+                comum.setTipoCadastro(2);
             } else {
-                tipoCadastro = 3;
+                comum.setTipoCadastro(3);
             }
-            
+           
             try {
-                cadastro.insereFisica(nome, sobrenome, cpf, email, sexo, contato, tipoCadastro, situacao);
+                cadastro.insereFisica(
+                        fisica.getNome(), 
+                        fisica.getSobrenome(), 
+                        fisica.getCpf(), 
+                        fisica.getSexo(), 
+                        comum.getEmail(), 
+                        endereco.getNumero(), 
+                        endereco.getComplemento(), 
+                        comum.getSituacao(), 
+                        comum.getContato(), 
+                        comum.getTipoCadastro(),                        
+                        endereco.getEstado(),
+                        endereco.getCidade(),
+                        endereco.getBairro(),
+                        endereco.getRua(),
+                        endereco.getCep() 
+                );
             } catch (SQLException ex) {
                 Logger.getLogger(frmPrincipal.class.getName()).log(Level.SEVERE, null, ex);
             }
+
         }
     }//GEN-LAST:event_bntCadastroActionPerformed
 
