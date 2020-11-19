@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package controller;
 
 import dao.Conexao;
@@ -16,10 +12,6 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import model.Usuario;
 
-/**
- *
- * @author Andre
- */
 public class FormCadastroController {
     private frmLogin view;
 
@@ -35,7 +27,8 @@ public class FormCadastroController {
         Usuario usuario1 = new Usuario(usuario, senha,senhaConfirmacao);
         
         try {
-            Connection conexao = new Conexao().getConnection();
+            Connection conexao = null;
+            conexao = Conexao.conector();
             UsuarioDao usuarioDao = new UsuarioDao(conexao);
             if (senha == null ? senhaConfirmacao == null : senha.equals(senhaConfirmacao)) {
             usuarioDao.insert(usuario1);
@@ -56,7 +49,8 @@ public class FormCadastroController {
         Usuario usuarioAutenticar = new Usuario(usuario, senhaLogin);
         //verifica se existe no BD
         
-        Connection conexao = new Conexao().getConnection();
+        Connection conexao = null;
+        conexao = Conexao.conector();
         UsuarioDao usuarioDao = new UsuarioDao(conexao);
         
         boolean existe = usuarioDao.existePorUsuarioESenha(usuarioAutenticar);

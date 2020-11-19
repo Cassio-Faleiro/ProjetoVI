@@ -1,32 +1,38 @@
 
 package interfaces;
 
+import dao.Conexao;
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.event.ActionEvent;
-import static java.lang.reflect.Array.set;
-import javax.swing.AbstractAction;
-import javax.swing.Action;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import javax.swing.JCheckBox;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JRadioButton;
 import javax.swing.SwingUtilities;
+import net.proteanit.sql.DbUtils;
 
 public class frmPrincipal extends javax.swing.JFrame {
-
+    
     boolean abertoFechado = false;
     int x,y;
+    Connection conexao = null;
+    PreparedStatement pst = null;
+    ResultSet rs = null;
     
     public frmPrincipal() {
-        initComponents();
+        initComponents();     
+        conexao = conexao = Conexao.conector();
         //inicia na tela home
         //remove frame
         telas.removeAll();
         //add frame
         telas.add(frmHome);
         this.setExtendedState(frmPrincipal.MAXIMIZED_BOTH);
-        clickButton(btnExpandir, detalhe1, 0);     
+        clickButton(btnExpandir, detalhe1, 0); 
+        pesquisaCliente();
     }
 
     @SuppressWarnings("unchecked")
@@ -745,6 +751,11 @@ public class frmPrincipal extends javax.swing.JFrame {
         txtPesquisaNome.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         txtPesquisaNome.setForeground(new java.awt.Color(102, 102, 102));
         txtPesquisaNome.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(51, 204, 255)));
+        txtPesquisaNome.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtPesquisaNomeKeyReleased(evt);
+            }
+        });
 
         lblPesquisaCli.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblPesquisaCli.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/search_20px.png"))); // NOI18N
@@ -757,17 +768,17 @@ public class frmPrincipal extends javax.swing.JFrame {
         tblClientes.setBackground(new java.awt.Color(255, 255, 255));
         tblClientes.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         tblClientes.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        tblClientes.setForeground(new java.awt.Color(255, 255, 255));
+        tblClientes.setForeground(new java.awt.Color(51, 51, 51));
         tblClientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "NÚMERO", "NOME", "SOBRENOME", "CIDADE"
+                "NÚMERO", "NOME", "CIDADE", "RAZAO"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -2333,8 +2344,20 @@ public class frmPrincipal extends javax.swing.JFrame {
             //limpar campos desabilitados
             txtSobrenome.setText("");
             txtCPF.setText("");
-        }
-        
+        }       
+    }
+    
+    //pesquisar cadastro de cliente
+    public void pesquisaCliente(){
+        String sql = "SELECT p.id AS NUMERO, p.nome AS NOME, c.descricao AS CIDADE, p.situacao FROM pessoa p INNER JOIN cidade c ON p.fk_id_cidade = c.id WHERE p.nome ILIKE ?";
+        try {         
+            pst = conexao.prepareStatement(sql);
+            pst.setString(1, txtPesquisaNome.getText()+"%");
+            rs = pst.executeQuery();
+            tblClientes.setModel(DbUtils.resultSetToTableModel(rs));      
+        } catch (Exception e) {
+             JOptionPane.showMessageDialog(null, "Ocorreu um erro! " + e.getMessage());
+        }  
     }
     
     private void lblSairMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSairMouseClicked
@@ -2597,6 +2620,10 @@ public class frmPrincipal extends javax.swing.JFrame {
         tipoPessoaFisica(cbxPessoaJuri);
     }//GEN-LAST:event_cbxPessoaJuriMouseClicked
 
+    private void txtPesquisaNomeKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPesquisaNomeKeyReleased
+        pesquisaCliente();
+    }//GEN-LAST:event_txtPesquisaNomeKeyReleased
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -2812,11 +2839,11 @@ public class frmPrincipal extends javax.swing.JFrame {
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtEmail1;
     private javax.swing.JTextField txtEmail3;
-    private javax.swing.JTextField txtNome;
+    public javax.swing.JTextField txtNome;
     private javax.swing.JTextField txtNome2;
     private javax.swing.JTextField txtNumero;
     private javax.swing.JTextField txtNumero1;
-    private javax.swing.JTextField txtPesquisaNome;
+    public javax.swing.JTextField txtPesquisaNome;
     private javax.swing.JTextField txtPesquisaOrc;
     private javax.swing.JTextField txtPesquisaProduto;
     private javax.swing.JTextField txtProd;
