@@ -1,34 +1,26 @@
 
 package interfaces;
 
-<<<<<<< HEAD
 import dao.Conexao;
-import java.awt.Color;
-import java.awt.Dimension;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-=======
 import dao.CadastraPessoa;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
->>>>>>> origin/master
 import javax.swing.JCheckBox;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
-<<<<<<< HEAD
 import net.proteanit.sql.DbUtils;
-=======
 import model.ComumPessoa;
 import model.Endereco;
 import model.Fisica;
 import model.Juridica;
->>>>>>> origin/master
 
 public class frmPrincipal extends javax.swing.JFrame {
     
@@ -2334,7 +2326,7 @@ public class frmPrincipal extends javax.swing.JFrame {
         }
     }
     
-    //se tipo de pessoa fisica
+    //se tipo de pessoa fisica ou juri
     public void tipoPessoaFisica(JCheckBox cbxTipoPessoa){
         if(cbxTipoPessoa == cbxPessoaFisica){
             //desabilitado
@@ -2345,6 +2337,7 @@ public class frmPrincipal extends javax.swing.JFrame {
             txtCPF.setEditable(true);
             rbFeminino.setEnabled(true);
             rbMasculino.setEnabled(true);
+            rbUsuário.setEnabled(true);
             
             //modifica componente
             lblNome.setText("Nome");
@@ -2645,11 +2638,10 @@ public class frmPrincipal extends javax.swing.JFrame {
         tipoPessoaFisica(cbxPessoaJuri);
     }//GEN-LAST:event_cbxPessoaJuriMouseClicked
 
-<<<<<<< HEAD
     private void txtPesquisaNomeKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPesquisaNomeKeyReleased
         pesquisaCliente();
     }//GEN-LAST:event_txtPesquisaNomeKeyReleased
-=======
+
     private void bntCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntCadastroActionPerformed
         // CONSTRUTORES
         CadastraPessoa cadastro = new CadastraPessoa();
@@ -2754,7 +2746,7 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         }
     }//GEN-LAST:event_bntCadastroActionPerformed
->>>>>>> origin/master
+
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
