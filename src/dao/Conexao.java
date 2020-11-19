@@ -6,6 +6,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class Conexao {
+<<<<<<< HEAD
     public static Connection conector(){
         java.sql.Connection conexao = null;
         // a linha abaixo chama o drive instalado
@@ -23,5 +24,10 @@ public class Conexao {
             System.out.println(e);
             return null;
         }
+=======
+    public static Connection getConnection() throws SQLException {
+        Connection conexao = DriverManager.getConnection("jdbc:postgresql://localhost:5432/db_principal","postgres","postgres");
+        return conexao;
+>>>>>>> origin/master
     }
 }
