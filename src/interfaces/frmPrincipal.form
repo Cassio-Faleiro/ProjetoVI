@@ -979,8 +979,8 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
                 <Property name="columns" type="int" value="0"/>
-                <Property name="rows" type="int" value="2"/>
                 <Property name="verticalGap" type="int" value="10"/>
+                <Property name="rows" type="int" value="2"/>
               </Layout>
               <SubComponents>
                 <Container class="javax.swing.JPanel" name="pnlClientes">
@@ -1443,8 +1443,8 @@
               <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
                 <Property name="columns" type="int" value="2"/>
                 <Property name="horizontalGap" type="int" value="5"/>
-                <Property name="rows" type="int" value="2"/>
                 <Property name="verticalGap" type="int" value="5"/>
+                <Property name="rows" type="int" value="2"/>
               </Layout>
               <SubComponents>
                 <Container class="javax.swing.JPanel" name="pnlCadastroBasico1">
@@ -2506,8 +2506,8 @@
               <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
                 <Property name="columns" type="int" value="2"/>
                 <Property name="horizontalGap" type="int" value="5"/>
-                <Property name="rows" type="int" value="2"/>
                 <Property name="verticalGap" type="int" value="5"/>
+                <Property name="rows" type="int" value="2"/>
               </Layout>
               <SubComponents>
                 <Container class="javax.swing.JPanel" name="pnlCadastroBasico2">
@@ -3404,7 +3404,7 @@
                                           <Component id="lblProd" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
                                           <Component id="lblQtdMed" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="bntCadastraProd" alignment="0" min="-2" pref="157" max="-2" attributes="0"/>
-                                          <Component id="txtEmail3" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="txtQuant" alignment="0" max="32767" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" pref="106" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
@@ -3441,7 +3441,7 @@
                                   <Group type="102" alignment="1" attributes="0">
                                       <Component id="lblQtdMed" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="txtEmail3" min="-2" pref="20" max="-2" attributes="0"/>
+                                      <Component id="txtQuant" min="-2" pref="20" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
                                       <Component id="lblUnidade" min="-2" max="-2" attributes="0"/>
@@ -3559,7 +3559,7 @@
                         <Property name="text" type="java.lang.String" value="Quantidade em Medida"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="txtEmail3">
+                    <Component class="javax.swing.JTextField" name="txtQuant">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Dialog" size="14" style="0"/>
@@ -3632,6 +3632,9 @@
                           <Color blue="da" green="62" red="5b" type="rgb"/>
                         </Property>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bntCadastraProdActionPerformed"/>
+                      </Events>
                     </Component>
                     <Component class="keeptoo.KButton" name="bntEditProd">
                       <Properties>

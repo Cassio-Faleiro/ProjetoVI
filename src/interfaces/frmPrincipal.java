@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import dao.CadastraPessoa;
+import dao.CadastraProduto;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.sql.SQLException;
@@ -21,6 +22,7 @@ import model.ComumPessoa;
 import model.Endereco;
 import model.Fisica;
 import model.Juridica;
+import model.Produto;
 
 public class frmPrincipal extends javax.swing.JFrame {
     
@@ -212,7 +214,7 @@ public class frmPrincipal extends javax.swing.JFrame {
         txtValor = new javax.swing.JTextField();
         lblValor = new javax.swing.JLabel();
         lblQtdMed = new javax.swing.JLabel();
-        txtEmail3 = new javax.swing.JTextField();
+        txtQuant = new javax.swing.JTextField();
         lblUnidade = new javax.swing.JLabel();
         txtUnidade = new javax.swing.JTextField();
         bntCadastraProd = new keeptoo.KButton();
@@ -1877,9 +1879,9 @@ public class frmPrincipal extends javax.swing.JFrame {
         lblQtdMed.setForeground(new java.awt.Color(102, 102, 102));
         lblQtdMed.setText("Quantidade em Medida");
 
-        txtEmail3.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        txtEmail3.setForeground(new java.awt.Color(102, 102, 102));
-        txtEmail3.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(51, 204, 255)));
+        txtQuant.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        txtQuant.setForeground(new java.awt.Color(102, 102, 102));
+        txtQuant.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(51, 204, 255)));
 
         lblUnidade.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblUnidade.setForeground(new java.awt.Color(102, 102, 102));
@@ -1898,6 +1900,11 @@ public class frmPrincipal extends javax.swing.JFrame {
         bntCadastraProd.setkHoverForeGround(new java.awt.Color(255, 255, 255));
         bntCadastraProd.setkHoverStartColor(new java.awt.Color(22, 54, 95));
         bntCadastraProd.setkStartColor(new java.awt.Color(91, 98, 218));
+        bntCadastraProd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bntCadastraProdActionPerformed(evt);
+            }
+        });
 
         bntEditProd.setBorder(null);
         bntEditProd.setText("Editar");
@@ -1924,7 +1931,7 @@ public class frmPrincipal extends javax.swing.JFrame {
                             .addComponent(lblProd, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblQtdMed)
                             .addComponent(bntCadastraProd, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtEmail3))
+                            .addComponent(txtQuant))
                         .addGap(106, 106, 106)
                         .addGroup(pnlEstoqueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(bntEditProd, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1952,7 +1959,7 @@ public class frmPrincipal extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlEstoqueLayout.createSequentialGroup()
                         .addComponent(lblQtdMed)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtEmail3, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtQuant, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlEstoqueLayout.createSequentialGroup()
                         .addComponent(lblUnidade)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -2643,7 +2650,7 @@ public class frmPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_txtPesquisaNomeKeyReleased
 
     private void bntCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntCadastroActionPerformed
-        // CONSTRUTORES
+        // Referências
         CadastraPessoa cadastro = new CadastraPessoa();
         Fisica fisica = new Fisica();
         Endereco endereco = new Endereco();
@@ -2658,6 +2665,7 @@ public class frmPrincipal extends javax.swing.JFrame {
         endereco.setCidade((String) cbCidade.getSelectedItem());
         endereco.setEstado((String) cbEstado.getSelectedItem());
         endereco.setComplemento(txaComplemento.getText());
+        
         
         // Inputs comuns para Jurídica e Física
         comum.setContato(txtContato.getText());
@@ -2685,7 +2693,7 @@ public class frmPrincipal extends javax.swing.JFrame {
                         endereco.getRua(),
                         endereco.getCep()                        
                 );
-            } catch (SQLException ex) {
+            } catch (SQLException | ClassNotFoundException ex) {
                 Logger.getLogger(frmPrincipal.class.getName()).log(Level.SEVERE, null, ex);
             }
 
@@ -2699,9 +2707,14 @@ public class frmPrincipal extends javax.swing.JFrame {
             
             // Validação de SEXO
             if (rbFeminino.isSelected()) {
+                // Feminino
                 fisica.setSexo('f');
             } else if (rbMasculino.isSelected()) {
+                // Masculino
                 fisica.setSexo('m');
+            } else {
+                // Não Binário
+                fisica.setSexo('n');
             }
             
             // Validação de SITUAÇÃO 
@@ -2740,12 +2753,48 @@ public class frmPrincipal extends javax.swing.JFrame {
                         endereco.getRua(),
                         endereco.getCep() 
                 );
-            } catch (SQLException ex) {
+            } catch (SQLException | ClassNotFoundException ex) {
                 Logger.getLogger(frmPrincipal.class.getName()).log(Level.SEVERE, null, ex);
             }
 
         }
     }//GEN-LAST:event_bntCadastroActionPerformed
+
+    private void bntCadastraProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntCadastraProdActionPerformed
+        Produto produto = new Produto();
+        CadastraProduto cadastra = new CadastraProduto();
+        
+        int tamDesc = txtProd.getText().length();
+        int tamCat = txtCategoria.getText().length();
+        int tamQuant = txtQuant.getText().length();
+        int tamUn = txtUnidade.getText().length();
+        int tamVal = txtValor.getText().length();
+        
+        
+        if (tamDesc == 0 || tamCat == 0 || tamQuant == 0 ||  tamUn == 0 || tamVal == 0) {
+            JOptionPane.showMessageDialog(null, "Todos os campos devem ser preenchidos", "Mensagem", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+        
+            produto.setDescricao(txtProd.getText().trim());
+            produto.setCategoria(txtCategoria.getText().trim());
+            produto.setQntEstoque(Double.parseDouble(txtQuant.getText()));
+            produto.setUnidade(txtUnidade.getText().trim());
+            produto.setVlrVenda(Double.parseDouble(txtValor.getText()));
+
+
+            try {
+                cadastra.insereProduto(
+                        produto.getDescricao(),
+                        produto.getCategoria(),
+                        produto.getQntEstoque(),
+                        produto.getVlrVenda(),
+                        produto.getUnidade()
+                );
+            } catch (SQLException | ClassNotFoundException ex) {
+                Logger.getLogger(frmPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }//GEN-LAST:event_bntCadastraProdActionPerformed
 
 
     public static void main(String args[]) {
@@ -2962,7 +3011,6 @@ public class frmPrincipal extends javax.swing.JFrame {
     private javax.swing.JFormattedTextField txtContato1;
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtEmail1;
-    private javax.swing.JTextField txtEmail3;
     public javax.swing.JTextField txtNome;
     private javax.swing.JTextField txtNome2;
     private javax.swing.JTextField txtNumero;
@@ -2971,6 +3019,7 @@ public class frmPrincipal extends javax.swing.JFrame {
     private javax.swing.JTextField txtPesquisaOrc;
     private javax.swing.JTextField txtPesquisaProduto;
     private javax.swing.JTextField txtProd;
+    private javax.swing.JTextField txtQuant;
     private javax.swing.JTextField txtRua;
     private javax.swing.JTextField txtRua1;
     private javax.swing.JTextField txtSobrenome;
